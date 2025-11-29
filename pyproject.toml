@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["emotion_lm"]
+
+[project]
+name = "EmotionLM"
+version = "0.0.1"
+authors = [
+  { name="Joseph Evans" },
+]
+description = "A library for integrating episodic memory within AI applications."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
