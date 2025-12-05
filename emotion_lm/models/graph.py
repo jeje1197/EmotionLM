@@ -1,15 +1,18 @@
 """
-Node: {id: str, data: any}
-Edge: {node_start, node_end}
-
-nodes: set
-adjacency list: dict[id:str, dict[id: str, data]]
+Module related to graph functionality.
 """
 class Graph:
     """
     Implementation for a directed graph data structure.
+
+    nodes: set[str] ex. {"A", "B", "C"}
+    adjacency_list: dict[str, dict[str, any]] ex. {"A": {"B":  <data for edge AB>, "C": <data for edge AC>}}
     """
     def __init__(self):
+        self.nodes = set()
+        self.adjacency_list = dict()
+
+    def clear(self):
         self.nodes = set()
         self.adjacency_list = dict()
     
@@ -19,13 +22,22 @@ class Graph:
     def edge_count(self):
         return len(self.adjacency_list)
     
+    def get_nodes(self):
+        return self.nodes
+    
+    def get_adjacency_list(self):
+        return self.adjacency_list
+    
     def get_node(self, id):
         return self.nodes[id]
     
     def add_node(self, id):
         self.nodes.add(id)
+    
+    def get_edge(self, start_id, end_id):
+        return self.adjacency_list[start_id][end_id]
 
-    def add_edge(self, start_id, end_id, data = None):
+    def add_edge(self, start_id, end_id, metadata = None):
         if start_id not in self.nodes:
             raise ValueError(f"Could not find node with id: '{start_id}'")
         if end_id not in self.nodes:
@@ -33,7 +45,7 @@ class Graph:
         if start_id not in self.adjacency_list:
             self.adjacency_list[start_id] = dict()
 
-        self.adjacency_list[start_id][end_id] = data
+        self.adjacency_list[start_id][end_id] = metadata
     
     def remove_node(self, id):
         self.nodes.remove(id)
