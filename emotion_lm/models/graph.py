@@ -5,15 +5,15 @@ class Graph:
     """
     Implementation for a directed graph data structure.
 
-    nodes: set[str] ex. {"A", "B", "C"}
+    nodes: dict[str, any] ex. {"A": <data for node A>, "B": <data for node B>, "C": <data for node C>}
     adjacency_list: dict[str, dict[str, any]] ex. {"A": {"B":  <data for edge AB>, "C": <data for edge AC>}}
     """
     def __init__(self):
-        self.nodes = set()
+        self.nodes = dict()
         self.adjacency_list = dict()
 
     def clear(self):
-        self.nodes = set()
+        self.nodes = dict()
         self.adjacency_list = dict()
     
     def node_count(self):
@@ -31,24 +31,27 @@ class Graph:
     def get_node(self, id):
         return self.nodes[id]
     
-    def add_node(self, id):
-        self.nodes.add(id)
+    def add_node(self, id, data=None):
+        self.nodes[id] = data
     
     def get_edge(self, start_id, end_id):
         return self.adjacency_list[start_id][end_id]
 
     def add_edge(self, start_id, end_id, metadata = None):
         if start_id not in self.nodes:
-            raise ValueError(f"Could not find node with id: '{start_id}'")
+            raise KeyError(f"Could not find node with id: '{start_id}'")
         if end_id not in self.nodes:
-            raise ValueError(f"Could not find node with id: '{end_id}'")
+            raise KeyError(f"Could not find node with id: '{end_id}'")
         if start_id not in self.adjacency_list:
             self.adjacency_list[start_id] = dict()
 
         self.adjacency_list[start_id][end_id] = metadata
     
     def remove_node(self, id):
-        self.nodes.remove(id)
+        if id not in self.nodes:
+            return
+        
+        del self.nodes[id]
     
     def remove_edge(self, start_id, end_id):
         if start_id not in self.adjacency_list:
@@ -65,28 +68,3 @@ Number of Nodes: {self.node_count()} Number of Edges: {self.edge_count()}
 Nodes: {self.nodes}
 Edges: {self.adjacency_list}
 """
-    
-  
-
-
-
-
-
-class Node:
-    def __init__(self, id):
-        self.id = id
-
-class Edge:
-    def __init__(self, from_node, to_node, type, metadata, weight):
-        self.from_node = from_node
-        self.to_node = to_node
-        self.type = type # caused, etc.
-        self.metadata = metadata # causal_strength, temporal_proximity, emotional_intensity weights, confidence
-        # weight: optional computed value based on metadata
-
-class MemoryGraph:
-    def __init__(self):
-        self.nodes = {} # id -> Node
-        self.edges = [] # id -> {A, B} 
-
-    
