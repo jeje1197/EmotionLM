@@ -34,6 +34,9 @@ class Graph:
     def add_node(self, id, data=None):
         self.nodes[id] = data
     
+    def get_edges_for_node(self, start_id):
+        return self.adjacency_list[start_id]
+    
     def get_edge(self, start_id, end_id):
         return self.adjacency_list[start_id][end_id]
 
