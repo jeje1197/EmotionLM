@@ -15,8 +15,11 @@ description = "A library for integrating episodic memory within AI applications.
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "numpy"
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
