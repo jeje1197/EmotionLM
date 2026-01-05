@@ -502,7 +502,7 @@ def load_graph(path: Union[str, Path]) -> nx.DiGraph:
         node_count = len(data["nodes"])
     except KeyError:
         node_count = len(data.get("node-data", []))
-    print(f"Loaded graph from {filename}. Total nodes: {node_count}.")
+    print(f"Loaded graph from {graph_path}. Total nodes: {node_count}.")
     return nx.node_link_graph(data)
 
 

@@ -91,17 +91,29 @@ python v1/code/evaluate_binary_classification.py \
 
 This prints accuracy/precision/recall/F1, and can optionally write metrics to JSON with `--out`.
 
-5. Running LLM‑as‑a‑judge (scaffold)
-------------------------------------
+5. Running LLM‑as‑a‑judge for RAG vs Context Path
+-------------------------------------------------
 
-To run the LLM‑as‑a‑judge evaluation pipeline described in the paper:
+To run the end‑to‑end RAG vs Context Path experiment and evaluate it with
+LLM‑as‑a‑judge:
 
 ```bash
 export GEMINI_API_KEY=YOUR_KEY_HERE  # or setx on Windows
-python v1/code/evaluate_llm_as_a_judge.py --config v1/code/llm_as_a_judge_config.json
+python v1/code/evaluate_rag_vs_context_path_responses.py
 ```
 
-Edit `v1/code/llm_as_a_judge_config.json` to point to your predictions CSV and set the rubric/prompt parameters used in the paper.
+This will:
+- load the embedded memory graph from `v1/data/memory_graph_embedded.json` and
+	the queries from `v1/data/queries.json`;
+- generate answers for each query using both retrieval methods (`rag` and
+  `context_path`) and write them to
+	`v1/artifacts/predictions/rag_vs_context_path_responses.csv`;
+- run the LLM‑as‑a‑judge pipeline configured in
+	`v1/code/llm_as_a_judge_config.json` and write scores to
+	`v1/artifacts/llm_judge/results.json`.
+
+You can edit `v1/code/llm_as_a_judge_config.json` to adjust the rubric,
+prompting, and model parameters used in the paper.
 
 Notes
 -----

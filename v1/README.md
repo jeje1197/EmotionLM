@@ -12,7 +12,7 @@ Structure
 	- `train.py` — trains the ALS edge classifier using `training_config.json` (single‑stage or multistage mode).
 	- `training_config.json` — hyperparameters and paths for ALS training.
 	- `evaluate_binary_classification.py` — evaluates a trained ALS model on an edge‑classification CSV.
-	- `evaluate_llm_as_a_judge.py` — runs the LLM‑as‑a‑judge evaluation pipeline using `llm_as_a_judge_config.json`.
+	- `evaluate_rag_vs_context_path_responses.py` — runs the RAG vs Context Path experiment and LLM‑as‑a‑judge evaluation using `llm_as_a_judge_config.json`.
 	- `llm_as_a_judge_config.json` — configuration and rubric for LLM‑as‑a‑judge.
 - `data/` — v1 data bundle:
 	- `memory_graph_embedded.json` — copy of the embedded memory graph used for training.

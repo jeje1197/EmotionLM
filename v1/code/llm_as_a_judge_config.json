@@ -1,5 +1,5 @@
 {
-  "predictions_csv": "path/to/predictions.csv",
+  "predictions_csv": "v1/artifacts/predictions/rag_vs_context_path_responses.csv",
   "id_column": "id",
   "context_column": "context",
   "prediction_column": "prediction",
@@ -9,6 +9,13 @@
   "model": "gemini-2.5-flash",
   "temperature": 0.2,
   "max_examples": 200,
+
+  "graph_path": "v1/data/memory_graph_embedded.json",
+  "queries_path": "v1/data/queries.json",
+  "top_k_rag": 5,
+  "max_nodes_path": 5,
+  "cpt_top_k_seeds": 1,
+  "cpt_max_depth": 3,
 
   "rubric": {
     "scale_min": 1,

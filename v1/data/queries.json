@@ -1,0 +1,77 @@
+[
+  {
+    "id": "A_q1",
+    "story_id": "A",
+    "query": "How is Alex feeling about moving away from their best friend for the promotion?"
+  },
+  {
+    "id": "A_q2",
+    "story_id": "A",
+    "query": "What trade-offs has Alex experienced between career growth and personal relationships?"
+  },
+  {
+    "id": "A_q3",
+    "story_id": "A",
+    "query": "Describe a recent event where Alex's relocation decision affected their social life."
+  },
+  {
+    "id": "B_q1",
+    "story_id": "B",
+    "query": "How does Maya's imposter syndrome influence her experience in the PhD program?"
+  },
+  {
+    "id": "B_q2",
+    "story_id": "B",
+    "query": "Give an example of a moment when Maya doubted whether she belongs in the program."
+  },
+  {
+    "id": "B_q3",
+    "story_id": "B",
+    "query": "How has Maya's relationship with her supervisor evolved over time?"
+  },
+  {
+    "id": "C_q1",
+    "story_id": "C",
+    "query": "What challenges has Liam faced in maintaining the long-distance relationship?"
+  },
+  {
+    "id": "C_q2",
+    "story_id": "C",
+    "query": "Describe an event that shows Liam and their partner planning for a future together."
+  },
+  {
+    "id": "C_q3",
+    "story_id": "C",
+    "query": "How does the time zone difference affect Liam's emotional state?"
+  },
+  {
+    "id": "D_q1",
+    "story_id": "D",
+    "query": "How is Sarah balancing caregiving for her parent with her nursing job?"
+  },
+  {
+    "id": "D_q2",
+    "story_id": "D",
+    "query": "Give an example of a time when Sarah felt she was failing someone in her life."
+  },
+  {
+    "id": "D_q3",
+    "story_id": "D",
+    "query": "How has Sarah's romantic relationship been affected by her burnout?"
+  },
+  {
+    "id": "E_q1",
+    "story_id": "E",
+    "query": "What setbacks has Ben encountered with the home renovation?"
+  },
+  {
+    "id": "E_q2",
+    "story_id": "E",
+    "query": "Describe a time when Ben's marathon training collided with renovation stress."
+  },
+  {
+    "id": "E_q3",
+    "story_id": "E",
+    "query": "How does Ben feel about balancing physical training with ongoing renovation delays?"
+  }
+]
