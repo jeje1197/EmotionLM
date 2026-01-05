@@ -5,17 +5,21 @@ import matplotlib.pyplot as plt
 import os
 from training.model import ALSModel
 
-CSV_FILE_PATH = "./data/03_CORE_training_dataset_FINAL.csv"
-NUM_EPOCHS = 30
-LEARNING_RATE = 0.0003
-EARLY_STOPPING_THRESHOLD = 5
+# UPDATED: Using corrected dataset with days-based temporal normalization
+CSV_FILE_PATH = "./data/03_CORE_training_dataset_CORRECTED.csv"
+
+# Hyperparameters - Experiment with these!
+NUM_EPOCHS = 100  # Increased for longer training
+LEARNING_RATE = 0.001  # Can experiment: [0.0001, 0.0003, 0.001, 0.003, 0.01]
+EARLY_STOPPING_THRESHOLD = 15  # Increased patience for longer training
+
 FEATURE_FIELDS = ["Semantic_Similarity", "Emotional_Alignment", "Time_Closeness"]
 LABEL_FIELD = "Linked"
 MODEL_SAVE_PATH = "data/models/als.pt"
 PLOT_SAVE_PATH = "research/images/loss_curve.png"
 
-SAVE_MODEL = False
-SAVE_PLOT = False
+SAVE_MODEL = True  # Changed to True to save best model
+SAVE_PLOT = True  # Changed to True to save training curves
 
 def load_dataset():
     return pd.read_csv(CSV_FILE_PATH)

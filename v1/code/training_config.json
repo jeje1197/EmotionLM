@@ -1,0 +1,19 @@
+{
+  "data_csv": "v1/data/edge_classification_dataset.csv",
+  "val_split": 0.2,
+  "num_epochs": 100,
+  "learning_rate": 0.001,
+  "early_stopping_patience": 10,
+  "mode": "single_stage",  
+  "stage1_epochs": 60,
+  "stage2_epochs": 40,
+  "output_model_path": "v1/artifacts/pretrained/als.pt",
+  "batch_size": 128,
+  "feature_fields": [
+    "Semantic_Similarity",
+    "Emotional_Alignment",
+    "Time_Closeness"
+  ],
+  "label_field": "Linked",
+  "random_seed": 42
+}
