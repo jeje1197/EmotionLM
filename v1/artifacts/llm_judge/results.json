@@ -1,0 +1,302 @@
+[
+  {
+    "id": "A_q1_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "A_q1_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "A_q2_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "A_q2_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "A_q3_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "A_q3_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q1_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q1_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q2_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q2_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q3_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "B_q3_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q1_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 4,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q1_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q2_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q2_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q3_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "C_q3_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q1_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q1_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q2_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q2_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q3_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "D_q3_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q1_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 4,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q1_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 4,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q2_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q2_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q3_rag",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  },
+  {
+    "id": "E_q3_context_path",
+    "scores": {
+      "relevance": 5,
+      "factual_accuracy": 5,
+      "emotional_alignment": 5,
+      "coherence": 5,
+      "overall_quality": 5
+    }
+  }
+]
