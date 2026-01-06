@@ -1,0 +1,8 @@
+# Requirements for v1 experiment and training code
+numpy
+pandas
+torch
+networkx
+pydantic
+google-genai
+chromadb

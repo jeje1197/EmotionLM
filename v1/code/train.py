@@ -1,0 +1,371 @@
+#!/usr/bin/env python3
+"""ALS training script for v1.
+
+This script trains the ALS edge classifier used in the paper on an edge
+classification CSV, with two modes:
+
+- single_stage: train all weights (semantic, emotional, temporal, bias) jointly.
+- multistage:  stage 1 trains semantic + temporal + bias; stage 2 fine-tunes the
+               emotional weight only, starting from stage 1's best checkpoint.
+
+Configuration is provided via a JSON file (see training_config.json) and can be
+optionally overridden on the command line.
+"""
+
+import argparse
+import json
+import os
+from pathlib import Path
+from typing import Dict, Tuple
+
+import numpy as np
+import torch
+from torch.utils.data import DataLoader, TensorDataset, random_split
+
+from model import ALSModel
+
+
+def load_config(path: Path) -> Dict:
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def make_datasets(cfg: Dict) -> Tuple[TensorDataset, TensorDataset]:
+    import pandas as pd
+
+    data_csv = cfg["data_csv"]
+    df = pd.read_csv(data_csv)
+
+    feature_fields = cfg["feature_fields"]
+    label_field = cfg["label_field"]
+
+    X = torch.tensor(df[feature_fields].values, dtype=torch.float32)
+    y = torch.tensor(np.expand_dims(df[label_field].values, axis=-1), dtype=torch.float32)
+
+    dataset = TensorDataset(X, y)
+
+    val_split = float(cfg.get("val_split", 0.2))
+    val_size = int(len(dataset) * val_split)
+    train_size = len(dataset) - val_size
+
+    generator = torch.Generator().manual_seed(int(cfg.get("random_seed", 42)))
+    train_ds, val_ds = random_split(dataset, [train_size, val_size], generator=generator)
+    return train_ds, val_ds
+
+
+def evaluate_dataset(dataset: TensorDataset, model: ALSModel) -> float:
+    """Compute average BCE loss over a dataset (baseline or validation)."""
+
+    loss_fn = torch.nn.BCELoss()
+    loader = DataLoader(dataset, batch_size=256)
+    model.eval()
+    total_loss = 0.0
+    n_samples = 0
+    with torch.no_grad():
+        for X_batch, y_batch in loader:
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            batch_size = y_batch.shape[0]
+            total_loss += loss.item() * batch_size
+            n_samples += batch_size
+    return total_loss / max(n_samples, 1)
+
+
+def train_single_stage(
+    train_ds: TensorDataset,
+    val_ds: TensorDataset,
+    model: ALSModel,
+    cfg: Dict,
+) -> ALSModel:
+    """Train all ALS weights jointly using configuration hyperparameters."""
+
+    num_epochs = int(cfg.get("num_epochs", 100))
+    lr = float(cfg.get("learning_rate", 0.001))
+    patience = int(cfg.get("early_stopping_patience", 10))
+    batch_size = int(cfg.get("batch_size", 128))
+
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_ds, batch_size=batch_size)
+
+    loss_fn = torch.nn.BCELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode="min", factor=0.1, threshold=1e-4
+    )
+
+    best_val_loss = float("inf")
+    best_state = None
+    epochs_no_improve = 0
+
+    for epoch in range(num_epochs):
+        model.train()
+        running_train = 0.0
+        n_train = 0
+        for X_batch, y_batch in train_loader:
+            optimizer.zero_grad()
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            loss.backward()
+            optimizer.step()
+            batch_size_cur = y_batch.shape[0]
+            running_train += loss.item() * batch_size_cur
+            n_train += batch_size_cur
+
+        avg_train = running_train / max(n_train, 1)
+
+        # Validation
+        model.eval()
+        running_val = 0.0
+        n_val = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                y_pred = model(X_batch)
+                v_loss = loss_fn(y_pred, y_batch)
+                batch_size_cur = y_batch.shape[0]
+                running_val += v_loss.item() * batch_size_cur
+                n_val += batch_size_cur
+        avg_val = running_val / max(n_val, 1)
+
+        print(f"[single_stage] Epoch {epoch+1}/{num_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
+
+        if avg_val < best_val_loss:
+            best_val_loss = avg_val
+            best_state = model.state_dict()
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+
+        scheduler.step(avg_val)
+        if epochs_no_improve >= patience:
+            print("Early stopping (single_stage)")
+            break
+
+    if best_state is not None:
+        model.load_state_dict(best_state)
+    return model
+
+
+def _apply_gradient_mask(model: ALSModel, mask_emotion: bool, mask_semantic: bool, mask_temporal: bool, mask_bias: bool) -> None:
+    """Zero out gradients for specific weight components before optimizer.step()."""
+
+    if model.slp.weight.grad is not None:
+        # Weight layout: [ [w_semantic, w_emotional, w_temporal] ]
+        if mask_semantic:
+            model.slp.weight.grad[0, 0] = 0.0
+        if mask_emotion:
+            model.slp.weight.grad[0, 1] = 0.0
+        if mask_temporal:
+            model.slp.weight.grad[0, 2] = 0.0
+    if mask_bias and model.slp.bias.grad is not None:
+        model.slp.bias.grad[0] = 0.0
+
+
+def train_multistage(
+    train_ds: TensorDataset,
+    val_ds: TensorDataset,
+    model: ALSModel,
+    cfg: Dict,
+) -> ALSModel:
+    """Two-stage training: (1) semantic+temporal, (2) emotional only.
+
+    Stage 1: optimise semantic + temporal weights and bias (emotion weight frozen).
+    Stage 2: starting from best Stage 1, optimise emotional weight only (others frozen).
+    """
+
+    lr = float(cfg.get("learning_rate", 0.001))
+    patience = int(cfg.get("early_stopping_patience", 10))
+    batch_size = int(cfg.get("batch_size", 128))
+    stage1_epochs = int(cfg.get("stage1_epochs", 50))
+    stage2_epochs = int(cfg.get("stage2_epochs", 50))
+
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_ds, batch_size=batch_size)
+
+    loss_fn = torch.nn.BCELoss()
+
+    # -------------------------
+    # Stage 1: semantic + temporal + bias
+    # -------------------------
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode="min", factor=0.1, threshold=1e-4
+    )
+
+    best_val_loss = float("inf")
+    best_state_stage1 = None
+    epochs_no_improve = 0
+
+    print("=== Multistage training: Stage 1 (semantic + temporal + bias) ===")
+    for epoch in range(stage1_epochs):
+        model.train()
+        running_train = 0.0
+        n_train = 0
+        for X_batch, y_batch in train_loader:
+            optimizer.zero_grad()
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            loss.backward()
+            # Freeze emotion weight (index 1) during Stage 1
+            _apply_gradient_mask(
+                model,
+                mask_emotion=True,
+                mask_semantic=False,
+                mask_temporal=False,
+                mask_bias=False,
+            )
+            optimizer.step()
+            batch_size_cur = y_batch.shape[0]
+            running_train += loss.item() * batch_size_cur
+            n_train += batch_size_cur
+
+        avg_train = running_train / max(n_train, 1)
+
+        # Validation
+        model.eval()
+        running_val = 0.0
+        n_val = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                y_pred = model(X_batch)
+                v_loss = loss_fn(y_pred, y_batch)
+                batch_size_cur = y_batch.shape[0]
+                running_val += v_loss.item() * batch_size_cur
+                n_val += batch_size_cur
+        avg_val = running_val / max(n_val, 1)
+
+        print(f"[multistage:stage1] Epoch {epoch+1}/{stage1_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
+
+        if avg_val < best_val_loss:
+            best_val_loss = avg_val
+            best_state_stage1 = model.state_dict()
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+
+        scheduler.step(avg_val)
+        if epochs_no_improve >= patience:
+            print("Early stopping (multistage stage 1)")
+            break
+
+    if best_state_stage1 is not None:
+        model.load_state_dict(best_state_stage1)
+
+    # -------------------------
+    # Stage 2: emotional weight only
+    # -------------------------
+    print("=== Multistage training: Stage 2 (emotional weight only) ===")
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode="min", factor=0.1, threshold=1e-4
+    )
+
+    best_val_loss_stage2 = float("inf")
+    best_state_stage2 = None
+    epochs_no_improve = 0
+
+    for epoch in range(stage2_epochs):
+        model.train()
+        running_train = 0.0
+        n_train = 0
+        for X_batch, y_batch in train_loader:
+            optimizer.zero_grad()
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            loss.backward()
+            # Only allow emotional weight (index 1) to update in Stage 2
+            _apply_gradient_mask(
+                model,
+                mask_emotion=False,
+                mask_semantic=True,
+                mask_temporal=True,
+                mask_bias=True,
+            )
+            optimizer.step()
+            batch_size_cur = y_batch.shape[0]
+            running_train += loss.item() * batch_size_cur
+            n_train += batch_size_cur
+
+        avg_train = running_train / max(n_train, 1)
+
+        # Validation
+        model.eval()
+        running_val = 0.0
+        n_val = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                y_pred = model(X_batch)
+                v_loss = loss_fn(y_pred, y_batch)
+                batch_size_cur = y_batch.shape[0]
+                running_val += v_loss.item() * batch_size_cur
+                n_val += batch_size_cur
+        avg_val = running_val / max(n_val, 1)
+
+        print(f"[multistage:stage2] Epoch {epoch+1}/{stage2_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
+
+        if avg_val < best_val_loss_stage2:
+            best_val_loss_stage2 = avg_val
+            best_state_stage2 = model.state_dict()
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+
+        scheduler.step(avg_val)
+        if epochs_no_improve >= patience:
+            print("Early stopping (multistage stage 2)")
+            break
+
+    if best_state_stage2 is not None:
+        model.load_state_dict(best_state_stage2)
+
+    return model
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Train ALS edge classifier for v1 experiments.")
+    parser.add_argument(
+        "--config",
+        default="v1/code/training_config.json",
+        help="Path to training configuration JSON.",
+    )
+    parser.add_argument(
+        "--mode",
+        choices=["single_stage", "multistage"],
+        default=None,
+        help="Override training mode; defaults to value in config.",
+    )
+    args = parser.parse_args()
+
+    cfg_path = Path(args.config)
+    cfg = load_config(cfg_path)
+
+    mode = args.mode or cfg.get("mode", "single_stage")
+    if mode not in {"single_stage", "multistage"}:
+        raise ValueError(f"Invalid mode: {mode}")
+
+    # Ensure output directory exists
+    out_path = Path(cfg.get("output_model_path", "v1/artifacts/pretrained/als.pt"))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f"Loading data from {cfg['data_csv']}")
+    train_ds, val_ds = make_datasets(cfg)
+
+    model = ALSModel(ignore_feature=None)
+    baseline_val_loss = evaluate_dataset(val_ds, model)
+    print(f"Baseline validation BCE loss (untrained model): {baseline_val_loss:.4f}")
+
+    if mode == "single_stage":
+        print("Running single-stage training (all weights jointly)...")
+        model = train_single_stage(train_ds, val_ds, model, cfg)
+    else:
+        print("Running multistage training (semantic+time, then emotion)...")
+        model = train_multistage(train_ds, val_ds, model, cfg)
+
+    final_val_loss = evaluate_dataset(val_ds, model)
+    print(f"Final validation BCE loss: {final_val_loss:.4f}")
+
+    torch.save(model.state_dict(), out_path)
+    print(f"Trained model saved to {out_path}")
+
+
+if __name__ == "__main__":
+    main()

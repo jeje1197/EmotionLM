@@ -1,0 +1,52 @@
+{
+  "predictions_csv": "v1/artifacts/predictions/rag_vs_context_path_responses.csv",
+  "id_column": "id",
+  "context_column": "context",
+  "prediction_column": "prediction",
+  "reference_column": "reference",
+  "output_path": "v1/artifacts/llm_judge/results.json",
+
+  "model": "gemini-2.5-flash",
+  "temperature": 0.2,
+  "max_examples": 200,
+
+  "graph_path": "v1/data/memory_graph_embedded.json",
+  "queries_path": "v1/data/queries.json",
+  "top_k_rag": 5,
+  "max_nodes_path": 5,
+  "cpt_top_k_seeds": 1,
+  "cpt_max_depth": 3,
+
+  "rubric": {
+    "scale_min": 1,
+    "scale_max": 5,
+    "dimensions": [
+      {
+        "name": "relevance",
+        "description": "How well does the prediction address the user query or context?"
+      },
+      {
+        "name": "factual_accuracy",
+        "description": "Are the key factual claims supported by the reference or context?"
+      },
+      {
+        "name": "emotional_alignment",
+        "description": "Does the tone and affect match the scenario and reference?"
+      },
+      {
+        "name": "coherence",
+        "description": "Is the response logically consistent and easy to follow?"
+      },
+      {
+        "name": "overall_quality",
+        "description": "Overall usefulness and faithfulness of the prediction."
+      }
+    ]
+  },
+
+  "prompt_template": "You are an expert judge. Given the context, the system's prediction, and the reference, rate the prediction on a scale of {scale_min} to {scale_max} for each dimension in the rubric. Respond ONLY with a JSON object mapping dimension names to integer scores.\\n\\nContext: {context}\\nReference: {reference}\\nPrediction: {prediction}",
+
+  "system_instruction": "You are an impartial, consistent evaluator of model outputs.",
+
+  "seed": 42
+}
