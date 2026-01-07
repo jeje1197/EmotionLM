@@ -19,6 +19,8 @@ class MemoryGraph:
 
     def __init__(self) -> None:
         self.graph = nx.DiGraph()
+        self._logging_enabled = False
+        self._logger_provider = None
 
     def add_event(self, event_id: str, event_data: Dict[str, Any]) -> None:
         """Add or update an event node.
@@ -57,15 +59,24 @@ class MemoryGraph:
     def subgraph(self, nodes: Iterable[str]) -> nx.DiGraph:
         return self.graph.subgraph(nodes).copy()
 
+    def set_logging(self, enabled: bool, logger_provider: Optional[Callable[[Dict[str, Any]], None]] = None):
+        """Configure logging for context path traversal operations.
+        
+        Args:
+            enabled: Whether to enable logging.
+            logger_provider: Callable that accepts a dict with log data.
+                If None when enabled=True, logs will be printed to console.
+        """
+        self._logging_enabled = enabled
+        self._logger_provider = logger_provider if logger_provider is not None else print
+
     def retrieve(
         self,
         query: Any,
         *,
         vector_lookup: Callable[[Any], Sequence[Tuple[str, float]]],
-        depth: int = 3,
         cpt_config: Optional["CPTConfig"] = None,
         event_data_provider: Optional[Callable[[str], Dict[str, Any]]] = None,
-        cache_event_data: bool = True,
         **kwargs: Any,
     ):
         """Run Context Path Traversal on this graph.
@@ -73,11 +84,10 @@ class MemoryGraph:
         Args:
             query: Query object passed to vector_lookup (text, vector, etc.).
             vector_lookup: Callable that returns [(node_id, score), ...] for the query.
-            depth: Maximum traversal depth (hops from seed nodes).
-            cpt_config: Optional CPTConfig for fine-grained control.
+            cpt_config: Optional CPTConfig for fine-grained control (max_depth, seed_nodes,
+                max_neighbors, min_als_score, cache_event_data, etc.). Defaults to CPTConfig().
             event_data_provider: Optional callable (event_id) -> dict that fetches
                 event data from an external source. If None, reads from this graph.
-            cache_event_data: Whether to cache event data lookups (default True).
             **kwargs: Forwarded to execute_context_path_traversal (e.g., score_fn).
 
         Returns:
@@ -89,15 +99,16 @@ class MemoryGraph:
             execute_context_path_traversal,
         )
 
-        config = (cpt_config.copy() if cpt_config is not None else CPTConfig())
-        config.max_depth = depth
-        config.cache_event_data = cache_event_data
+        config = cpt_config if cpt_config is not None else CPTConfig()
+        logger = self._logger_provider if self._logging_enabled else None
+        
         return execute_context_path_traversal(
             memory_store=self,
             query=query,
             vector_store_lookup_function=vector_lookup,
             cpt_config=config,
             event_data_provider=event_data_provider,
+            logger=logger,
             **kwargs,
         )
 

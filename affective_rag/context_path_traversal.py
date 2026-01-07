@@ -5,7 +5,7 @@
 - Returns ranked context paths (list of node dicts + path score).
 """
 
-from typing import Any, Callable, List, Tuple, Sequence, Optional
+from typing import Any, Callable, List, Tuple, Sequence, Optional, Dict
 from pydantic import BaseModel
 from .memory_store import MemoryGraph
 from .als import calculate_als_score
@@ -39,6 +39,7 @@ def execute_context_path_traversal(
     cpt_config: CPTConfig = CPTConfig(),
     score_fn: Optional[Callable[[dict, dict], float]] = None,
     event_data_provider: Optional[Callable[[str], dict]] = None,
+    logger: Optional[Callable[[Dict[str, Any]], None]] = None,
 ) -> CPTResult:
     """Perform Context Path Traversal.
 
@@ -78,6 +79,21 @@ def execute_context_path_traversal(
     seed_hits = list(vector_store_lookup_function(query))[: cpt_config.seed_nodes]
     seed_scores = {nid: float(score) for nid, score in seed_hits}
 
+    if logger:
+        logger({
+            "event": "Context Path Retrieval",
+            "type": "synchronous",
+            "query": str(query),
+            "config": {
+                "max_depth": cpt_config.max_depth,
+                "seed_nodes": cpt_config.seed_nodes,
+                "max_neighbors": cpt_config.max_neighbors,
+                "min_als_score": cpt_config.min_als_score,
+                "cache_event_data": cpt_config.cache_event_data,
+            },
+            "seed_nodes": [(nid, score) for nid, score in seed_hits],
+        })
+
     paths: List[ContextPath] = []
     globally_visited: set[str] = set()
 
@@ -88,6 +104,14 @@ def execute_context_path_traversal(
         # Skip seeds that were already part of a previous path
         if seed_id in globally_visited:
             continue
+
+        if logger:
+            logger({
+                "event": "Building Context Path",
+                "path_number": len(paths) + 1,
+                "seed_node": seed_id,
+                "seed_score": seed_score,
+            })
 
         path_ids: List[str] = [seed_id]
         current_id = seed_id
@@ -118,13 +142,34 @@ def execute_context_path_traversal(
                     continue
                 candidates.append((nbr, score))
 
-            if not candidates:
-                break
-
             # Sort by score descending and consider at most max_neighbors candidates
             candidates.sort(key=lambda x: x[1], reverse=True)
             top_candidates = candidates[: max(cpt_config.max_neighbors, 1)]
+
+            if logger:
+                logger({
+                    "event": "Traversal Step",
+                    "path_number": len(paths) + 1,
+                    "current_node": current_id,
+                    "current_path": path_ids,
+                    "depth": depth,
+                    "computation": "als",
+                    "neighbors": [(nid, score) for nid, score in candidates],
+                    "top_candidates": [(nid, score) for nid, score in top_candidates],
+                })
+
+            if not candidates:
+                break
+
             best_id, best_score = top_candidates[0]
+
+            if logger:
+                logger({
+                    "event": "Node Selection",
+                    "path_number": len(paths) + 1,
+                    "selected_nodes": [best_id],
+                    "selected_score": best_score,
+                })
 
             path_ids.append(best_id)
             acc_score += best_score
@@ -135,6 +180,16 @@ def execute_context_path_traversal(
         # Build path object for this seed
         nodes = [get_event_data(nid) for nid in path_ids]
         paths.append(ContextPath(nodes=nodes, score=acc_score))
+        
+        if logger:
+            path_texts = [node.get("text", node.get("content", "<no text>")) for node in nodes]
+            logger({
+                "event": "Full Context Path",
+                "path_number": len(paths),
+                "node_ids": path_ids,
+                "score": acc_score,
+                "context_contributed": path_texts,
+            })
 
     # Sort final paths by score descending
     ranked = sorted(paths, key=lambda p: p.score, reverse=True)

@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Tuple
 
-from affective_rag import MemoryGraph
+from affective_rag import MemoryGraph, CPTConfig
 
 
 def build_demo_graph_simple() -> MemoryGraph:
@@ -163,7 +163,11 @@ def main() -> None:
     vector_lookup = make_chroma_lookup(collection)
 
     query = "What was the feedback on the project?"
-    result = graph_simple.retrieve(query, vector_lookup=vector_lookup, depth=3)
+    result = graph_simple.retrieve(
+        query, 
+        vector_lookup=vector_lookup, 
+        cpt_config=CPTConfig(max_depth=3)
+    )
 
     print("\nContext paths:\n")
     for i, path in enumerate(result.paths, start=1):
@@ -191,7 +195,7 @@ def main() -> None:
         query,
         vector_lookup=vector_lookup2,
         event_data_provider=get_event_data,
-        depth=3,
+        cpt_config=CPTConfig(max_depth=3),
     )
 
     print("\nContext paths (fetched from external metadata store):\n")

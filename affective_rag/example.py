@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from typing import Any, List, Tuple
 
-from . import MemoryGraph
+from . import MemoryGraph, CPTConfig
 
 
 def fake_vector_store_lookup(_query: Any) -> List[Tuple[str, float]]:
@@ -70,7 +70,7 @@ def main() -> None:
     context = graph.retrieve(
         "Why did Alice reconcile with Bob?",
         vector_lookup=fake_vector_store_lookup,
-        depth=3,
+        cpt_config=CPTConfig(max_depth=3),
     )
 
     print("Discovered context paths:\n")
