@@ -218,7 +218,6 @@ __marimo__/
 # Custom folders for this project
 data/
 !v1/data/
-affective_rag/
 
 # Object files
 **/*.bin
