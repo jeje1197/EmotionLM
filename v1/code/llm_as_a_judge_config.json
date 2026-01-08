@@ -44,7 +44,7 @@
     ]
   },
 
-  "prompt_template": "You are an expert judge. Given the context, the system's prediction, and the reference, rate the prediction on a scale of {scale_min} to {scale_max} for each dimension in the rubric. Respond ONLY with a JSON object mapping dimension names to integer scores.\\n\\nContext: {context}\\nReference: {reference}\\nPrediction: {prediction}",
+  "prompt_template": "You are an expert judge. Given the context, the system's prediction, and the reference, rate the prediction on a scale of {scale_min} to {scale_max} for each of the following dimensions.\\n\\nDIMENSIONS (name: description)\\n{dimensions}\\n\\nIMPORTANT: Respond ONLY with a JSON object using EXACTLY these keys: [{dimension_keys}]. Do not add, remove, or rename keys. Each value must be an integer between {scale_min} and {scale_max}.\\n\\nContext: {context}\\nReference: {reference}\\nPrediction: {prediction}",
 
   "system_instruction": "You are an impartial, consistent evaluator of model outputs.",
 

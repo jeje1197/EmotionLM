@@ -14,6 +14,7 @@ For each query in a JSON file, this script:
 import argparse
 import json
 import os
+import time
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -24,6 +25,7 @@ import numpy as np
 import pandas as pd
 from google import genai  # type: ignore
 from google.genai import types  # type: ignore
+from google.genai import errors as genai_errors  # type: ignore
 
 from generate_dataset import (  # type: ignore
     EMBEDDING_MODEL,
@@ -44,6 +46,57 @@ def load_config(path: Path) -> Dict[str, Any]:
         return json.load(f)
 
 
+def _call_gemini_with_backoff(
+    client: genai.Client,
+    *,
+    model: str,
+    contents: str,
+    config: types.GenerateContentConfig | None = None,
+    max_retries: int = 5,
+    base_wait_seconds: float = 30.0,
+):
+    """Call Gemini with simple backoff on transient quota/availability errors.
+
+    Behavior is the same as a direct generate_content call, except that
+    certain 4xx/5xx errors (quota exceeded, model overloaded) trigger a
+    short sleep and retry instead of failing immediately.
+    """
+
+    for attempt in range(max_retries):
+        try:
+            return client.models.generate_content(
+                model=model,
+                contents=contents,
+                config=config,
+            )
+        except genai_errors.APIError as e:  # type: ignore[reportAttributeAccessIssue]
+            message = str(e)
+
+            # If this looks like a hard daily free-tier limit, don't keep retrying.
+            if "GenerateRequestsPerDayPerProjectPerModel-FreeTier" in message:
+                raise RuntimeError(
+                    "Gemini free-tier daily request limit reached for this model. "
+                    "Wait until the quota resets or switch to a paid tier / different model."
+                ) from e
+
+            transient = (
+                "RESOURCE_EXHAUSTED" in message
+                or "quota" in message.lower()
+                or "UNAVAILABLE" in message
+                or "overloaded" in message.lower()
+            )
+            if not transient or attempt == max_retries - 1:
+                raise
+
+            wait = base_wait_seconds
+            print(
+                f"[Gemini] Transient error (attempt {attempt + 1}/{max_retries}): {message}. "
+                f"Sleeping for {wait:.0f}s before retrying..."
+            )
+            time.sleep(wait)
+            continue
+
+
 def build_judge_client() -> genai.Client:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -58,9 +111,24 @@ def make_judge_prompt(example: Dict[str, Any], cfg: Dict[str, Any]) -> str:
     reference = example.get("reference", "")
     prediction = example.get("prediction", "")
 
+     # Build a human-readable list of dimensions and a strict key list.
+    dim_entries = rubric.get("dimensions", [])
+    dimensions_lines: List[str] = []
+    dimension_names: List[str] = []
+    for d in dim_entries:
+        name = str(d.get("name"))
+        desc = str(d.get("description", ""))
+        dimension_names.append(name)
+        dimensions_lines.append(f"- {name}: {desc}")
+
+    dimensions_block = "\n".join(dimensions_lines)
+    dimension_keys = ", ".join(dimension_names)
+
     return template.format(
         scale_min=rubric["scale_min"],
         scale_max=rubric["scale_max"],
+        dimensions=dimensions_block,
+        dimension_keys=dimension_keys,
         context=context,
         reference=reference,
         prediction=prediction,
@@ -79,13 +147,13 @@ def score_example(client: genai.Client, example: Dict[str, Any], cfg: Dict[str, 
     config = types.GenerateContentConfig(
         system_instruction=system_instruction,
         response_mime_type="application/json",
+        temperature=temperature,
     )
-
-    response = client.models.generate_content(
+    response = _call_gemini_with_backoff(
+        client,
         model=model_name,
         contents=prompt,
         config=config,
-        generation_config=types.GenerateContentConfig(temperature=temperature),
     )
 
     try:
@@ -166,8 +234,8 @@ def build_context_from_nodes(G: nx.DiGraph, node_ids: List[int]) -> str:
     for nid, ts in nodes_with_time:
         data = G.nodes[nid]
         text = data.get("event_text", "")
-        emotion = data.get("emotional_state", "")
-        parts.append(f"[{ts}] {text} (Emotion: {emotion})")
+        # Do not surface explicit emotion labels; rely on narrative context only.
+        parts.append(f"[{ts}] {text}")
 
     return "\n".join(parts)
 
@@ -278,8 +346,8 @@ def generate_answer(client: genai.Client, query_text: str, context: str, method:
     config = types.GenerateContentConfig(
         system_instruction=system_instruction,
     )
-
-    response = client.models.generate_content(
+    response = _call_gemini_with_backoff(
+        client,
         model=MODEL_NAME,
         contents=prompt,
         config=config,
@@ -305,13 +373,22 @@ def run_experiment(
 
     client = get_gemini_client()
 
+    print(f"Loaded graph from {graph_path} with {G.number_of_nodes()} nodes.")
+    print(f"Loaded {len(queries)} queries from {queries_path}.")
+    print(
+        f"Running generation with top_k_rag={top_k_rag}, max_nodes_path={max_nodes_path}, "
+        f"seed_top_k={seed_top_k}, max_depth={max_depth}."
+    )
+
     rows: List[Dict[str, Any]] = []
-    for q in queries:
+    for idx, q in enumerate(queries, start=1):
         qid = q.get("id")
         story_id = q.get("story_id")
         query_text = q.get("query")
         if not qid or not story_id or not query_text:
             continue
+
+        print(f"[Gen {idx}/{len(queries)}] Query {qid} (story {story_id}) - building contexts...")
 
         rag_context, rag_nodes = retrieve_rag_context(G, story_index, story_id, query_text, top_k=top_k_rag)
         path_context, path_nodes = retrieve_context_path(
@@ -322,6 +399,10 @@ def run_experiment(
             max_nodes=max_nodes_path,
             seed_top_k=seed_top_k,
             max_depth=max_depth,
+        )
+
+        print(
+            f"[Gen {idx}/{len(queries)}] Query {qid} - generating answers (RAG & Context Path)..."
         )
 
         rag_answer = generate_answer(client, query_text, rag_context, method="rag")
@@ -375,14 +456,17 @@ def run_judging(cfg_path: Path) -> None:
 
     client = build_judge_client()
 
+    print(f"Running LLM-as-a-judge on {len(df)} predictions from {predictions_csv}...")
+
     results: List[Dict[str, Any]] = []
-    for _, row in df.iterrows():
+    for idx, (_, row) in enumerate(df.iterrows(), start=1):
         example = {
             "id": row[id_col],
             "context": row.get(context_col, ""),
             "prediction": row[pred_col],
             "reference": row.get(ref_col, ""),
         }
+        print(f"[Judge {idx}/{len(df)}] Scoring {example['id']}...")
         scores = score_example(client, example, cfg)
         results.append({"id": example["id"], "scores": scores})
 

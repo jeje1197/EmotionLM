@@ -3,11 +3,11 @@ requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["emotion_lm"]
+packages = ["affective_rag"]
 
 [project]
-name = "EmotionLM"
-version = "0.0.1"
+name = "affective-rag"
+version = "0.1.0"
 authors = [
   { name="Joseph Evans" },
 ]
@@ -16,10 +16,34 @@ readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
   "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
 ]
-dependencies = [
-  "numpy"
+keywords = [
+  "AI",
+  "RAG",
+  "Graph-RAG",
+  "Affective Computing",
+  "Episodic Memory",
+  "Affective Link Scoring",
+  "Context Path Traversal"
 ]
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+dependencies = [
+  "numpy",
+  "networkx",
+  "pydantic"
+]
+license = "Apache-2.0"
+license-files = ["LICENSE*", "PATENTS*"]
+
+[project.urls]
+Homepage = "https://github.com/jeje1197/AffectiveRAG"
+Repository = "https://github.com/jeje1197/AffectiveRAG"
+Issues = "https://github.com/jeje1197/AffectiveRAG/issues"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/research",
+  "/data",
+  "/v1",
+]
