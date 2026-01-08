@@ -5,6 +5,9 @@ A lightweight Python library for emotion-aware episodic memory retrieval using *
 ## Installation
 
 ```bash
+# Install from PyPI
+pip install affective-rag
+
 # Install from source
 git clone https://github.com/jeje1197/AffectiveRAG.git
 cd AffectiveRAG

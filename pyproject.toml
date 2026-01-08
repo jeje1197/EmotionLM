@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 packages = ["affective_rag"]
 
 [project]
-name = "AffectiveRAG"
+name = "affective-rag"
 version = "0.1.0"
 authors = [
   { name="Joseph Evans" },
