@@ -9,9 +9,9 @@ Main entrypoint:
     context = graph.retrieve(query, vector_lookup=my_lookup, depth=3)
 """
 
-from .memory_store import MemoryGraph
-from .als import calculate_als_score, DEFAULT_ALS_CONFIG, ALSConfig
-from .context_path_traversal import execute_context_path_traversal, CPTConfig, ContextPath, CPTResult
+from .core.memory_store import MemoryGraph
+from .core.als import calculate_als_score, DEFAULT_ALS_CONFIG, ALSConfig
+from .core.context_path_traversal import execute_context_path_traversal, CPTConfig, ContextPath, CPTResult
 
 __all__ = [
 	"MemoryGraph",

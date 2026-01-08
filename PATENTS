@@ -1,0 +1,99 @@
+Additional Patent Grant
+========================
+
+SCOPE OF THIS GRANT
+
+This grant applies to the Affective Link Scoring (ALS) and Context Path 
+Traversal (CPT) algorithms and methods implemented in this software library.
+
+Subject to the terms below, Joseph Evans ("Grantor") hereby grants to any 
+person obtaining a copy of this software a perpetual, worldwide, royalty-free, 
+non-exclusive license under Grantor's patent rights that cover the software, 
+to make, use, and distribute the software in accordance with the Apache 
+License 2.0.
+
+
+PATENT INFORMATION
+
+The methods and algorithms in this library are covered by:
+- U.S. Provisional Patent Application No. 63/949,166
+- Additional patent applications may be pending or filed
+
+Patent Rights Holder: Joseph Evans
+Filing Date: See individual patent applications
+Status: Patent Pending
+
+
+PERMITTED USE
+
+The following uses are PERMITTED under this grant:
+
+✓ Academic and Educational Use
+  - Research projects at educational institutions
+  - Teaching and classroom instruction
+  - Thesis and dissertation work
+  - Academic publications and papers
+
+✓ Personal and Non-Commercial Use
+  - Personal learning and experimentation
+  - Open-source projects (non-commercial)
+  - Hobby projects and prototypes
+
+✓ Internal Research & Development
+  - Internal experimentation at companies
+  - R&D prototypes not deployed to customers
+  - Evaluation and testing purposes
+
+✓ Publishing and Sharing
+  - Publishing research results using this software
+  - Sharing modifications with the community
+  - Creating derivative works under Apache 2.0
+
+
+COMMERCIAL USE
+
+Commercial deployment of this software in products or services offered to 
+customers, or commercial implementations of the patented methods outside 
+this codebase, may require a separate commercial license.
+
+"Commercial deployment" includes:
+  - Integration into commercial products or SaaS offerings
+  - Use in production systems serving paying customers
+  - Commercial licensing or sale of derivative software
+
+If you are unsure whether your use case requires a commercial license, 
+please contact: focalways99@gmail.com
+
+
+ATTRIBUTION & CITATION
+
+While not legally required, attribution is appreciated:
+
+For Software Use:
+  Affective RAG Library by Joseph Evans
+  https://github.com/jeje1197/AffectiveRAG (Apache 2.0 License)
+
+For Academic Citation:
+  Evans, J. (2025). Beyond Semantics: Information Retrieval with Emotion 
+  and Time.
+
+
+TERMINATION
+
+This patent grant terminates if you:
+  1. Initiate patent litigation alleging this software infringes your patents
+  2. Violate the terms of the Apache 2.0 License
+  3. Use the patented methods in violation of this grant
+
+
+NO WARRANTY
+
+This grant is provided "AS IS" without warranty of any kind. See the 
+Apache 2.0 License for full warranty disclaimers.
+
+
+QUESTIONS
+
+For commercial licensing inquiries or questions about this patent grant:
+  Contact: focalways99@gmail.com
+  Patent Holder: Joseph Evans
