@@ -1,5 +1,9 @@
 # Affective-RAG
 
+[![PyPI version](https://img.shields.io/pypi/v/affective-rag.svg)](https://pypi.org/project/affective-rag/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GitHub stars](https://img.shields.io/github/stars/jeje1197/AffectiveRAG?style=social)](https://github.com/jeje1197/AffectiveRAG)
+
 A lightweight Python library for emotion-aware episodic memory retrieval using **Affective Link Scoring (ALS)** and **Context Path Traversal (CPT)**.
 
 ## Installation
@@ -224,7 +228,7 @@ class CPTConfig:
     max_neighbors: int = 10          # Candidates per hop
     min_als_score: Optional[float]   # Score threshold
     cache_event_data: bool = True    # Enable caching
-    spreading_activation: bool = False  # (not yet implemented)
+    spreading_activation: bool = False  # Enable/disable semantic spreading
 ```
 
 ### `CPTResult`
