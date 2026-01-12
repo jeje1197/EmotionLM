@@ -571,14 +571,13 @@ def generate_embeddings(G: nx.DiGraph) -> nx.DiGraph:
     vector_map: List[Dict[str, Any]] = []
 
     for node_id, data in G.nodes(data=True):
-        if not data.get("semantic_vec") or len(data["semantic_vec"]) != VECTOR_DIMENSION:
-            semantic_prompt = f"Event: {data['event_text']}. Tags: {', '.join(data['semantic_tags'])}"
-            batch_input_texts.append(semantic_prompt)
-            vector_map.append({"node_id": node_id, "type": "semantic"})
+        semantic_prompt = data["event_text"]
+        batch_input_texts.append(semantic_prompt)
+        vector_map.append({"node_id": node_id, "type": "semantic"})
 
-            emotional_prompt = data["emotional_state"]
-            batch_input_texts.append(emotional_prompt)
-            vector_map.append({"node_id": node_id, "type": "emotional"})
+        emotional_prompt = data["emotional_state"]
+        batch_input_texts.append(emotional_prompt)
+        vector_map.append({"node_id": node_id, "type": "emotional"})
 
     if not batch_input_texts:
         print("Node enrichment skipped: all nodes already contain embeddings.")

@@ -287,7 +287,7 @@ See the [examples/](examples) directory for complete demos:
 
 - **[Unified Sampling Guide](docs/UNIFIED_SAMPLING.md)** - Advanced sampling strategies (top-k, top-p, random)
 - **[API Reference](#api-reference)** - Complete method documentation
-- **[Examples](examples/)** - Working code samples
+- **[Examples](affective_rag/examples/)** - Working code samples
 
 ## Contributing
 

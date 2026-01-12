@@ -76,7 +76,7 @@ def train_single_stage(
     val_ds: TensorDataset,
     model: ALSModel,
     cfg: Dict,
-) -> ALSModel:
+) -> Tuple[ALSModel, Dict]:
     """Train all ALS weights jointly using configuration hyperparameters."""
 
     num_epochs = int(cfg.get("num_epochs", 100))
@@ -96,6 +96,8 @@ def train_single_stage(
     best_val_loss = float("inf")
     best_state = None
     epochs_no_improve = 0
+
+    metrics = {"train_loss": [], "val_loss": []}
 
     for epoch in range(num_epochs):
         model.train()
@@ -126,6 +128,9 @@ def train_single_stage(
                 n_val += batch_size_cur
         avg_val = running_val / max(n_val, 1)
 
+        metrics["train_loss"].append(avg_train)
+        metrics["val_loss"].append(avg_val)
+
         print(f"[single_stage] Epoch {epoch+1}/{num_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
 
         if avg_val < best_val_loss:
@@ -142,7 +147,7 @@ def train_single_stage(
 
     if best_state is not None:
         model.load_state_dict(best_state)
-    return model
+    return model, metrics
 
 
 def _apply_gradient_mask(model: ALSModel, mask_emotion: bool, mask_semantic: bool, mask_temporal: bool, mask_bias: bool) -> None:
@@ -165,7 +170,7 @@ def train_multistage(
     val_ds: TensorDataset,
     model: ALSModel,
     cfg: Dict,
-) -> ALSModel:
+) -> Tuple[ALSModel, Dict]:
     """Two-stage training: (1) semantic+temporal, (2) emotional only.
 
     Stage 1: optimise semantic + temporal weights and bias (emotion weight frozen).
@@ -182,6 +187,13 @@ def train_multistage(
     val_loader = DataLoader(val_ds, batch_size=batch_size)
 
     loss_fn = torch.nn.BCELoss()
+
+    metrics = {
+        "stage1_train_loss": [],
+        "stage1_val_loss": [],
+        "stage2_train_loss": [],
+        "stage2_val_loss": [],
+    }
 
     # -------------------------
     # Stage 1: semantic + temporal + bias
@@ -232,6 +244,9 @@ def train_multistage(
                 running_val += v_loss.item() * batch_size_cur
                 n_val += batch_size_cur
         avg_val = running_val / max(n_val, 1)
+
+        metrics["stage1_train_loss"].append(avg_train)
+        metrics["stage1_val_loss"].append(avg_val)
 
         print(f"[multistage:stage1] Epoch {epoch+1}/{stage1_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
 
@@ -300,6 +315,9 @@ def train_multistage(
                 n_val += batch_size_cur
         avg_val = running_val / max(n_val, 1)
 
+        metrics["stage2_train_loss"].append(avg_train)
+        metrics["stage2_val_loss"].append(avg_val)
+
         print(f"[multistage:stage2] Epoch {epoch+1}/{stage2_epochs} - train={avg_train:.4f}, val={avg_val:.4f}")
 
         if avg_val < best_val_loss_stage2:
@@ -317,7 +335,7 @@ def train_multistage(
     if best_state_stage2 is not None:
         model.load_state_dict(best_state_stage2)
 
-    return model
+    return model, metrics
 
 
 def main() -> None:
@@ -355,13 +373,42 @@ def main() -> None:
 
     if mode == "single_stage":
         print("Running single-stage training (all weights jointly)...")
-        model = train_single_stage(train_ds, val_ds, model, cfg)
+        model, metrics = train_single_stage(train_ds, val_ds, model, cfg)
     else:
         print("Running multistage training (semantic+time, then emotion)...")
-        model = train_multistage(train_ds, val_ds, model, cfg)
+        model, metrics = train_multistage(train_ds, val_ds, model, cfg)
 
     final_val_loss = evaluate_dataset(val_ds, model)
     print(f"Final validation BCE loss: {final_val_loss:.4f}")
+
+    # Print observed weights
+    weights = model.slp.weight.detach().numpy()[0]
+    bias = model.slp.bias.detach().numpy()[0]
+
+    # Save weight values to metrics
+    metrics["final_weights"] = {
+        "Semantic_Weight": float(weights[0]),
+        "Emotional_Weight": float(weights[1]),
+        "Temporal_Weight": float(weights[2]),
+        "Bias": float(bias)
+    }
+
+    print("\n--- Observed Weights ---")
+    print(f"Semantic Weight:  {weights[0]:.4f}")
+    print(f"Emotional Weight: {weights[1]:.4f}")
+    print(f"Temporal Weight:  {weights[2]:.4f}")
+    print(f"Bias:             {bias:.4f}")
+    print("------------------------\n")
+
+    # Save results (metrics, weights, and config)
+    results = {
+        "config": cfg,
+        "metrics": metrics
+    }
+    metrics_path = out_path.parent / "training_metrics.json"
+    with open(metrics_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=4)
+    print(f"Training results saved to {metrics_path}")
 
     torch.save(model.state_dict(), out_path)
     print(f"Trained model saved to {out_path}")
