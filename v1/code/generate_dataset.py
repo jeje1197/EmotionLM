@@ -48,7 +48,7 @@ RECENT_LINK_CANDIDATES = CONTEXT_BUFFER_SIZE * RECENT_LINK_WINDOW_MULTIPLIER
 
 EMBEDDING_MODEL = "text-embedding-004"
 VECTOR_DIMENSION = 768
-NEGATIVE_SAMPLE_RATIO = 2.0
+NEGATIVE_SAMPLE_RATIO = 1.0
 NEGATIVE_SAMPLE_ATTEMPTS = 5
 EMBEDDING_CHUNK_SIZE = 100
 
@@ -534,8 +534,10 @@ def cosine_similarity(vec_a: List[float], vec_b: List[float]) -> float:
     norm_a = np.linalg.norm(a)
     norm_b = np.linalg.norm(b)
     if norm_a == 0 or norm_b == 0:
-        return 0.0
-    return dot_product / (norm_a * norm_b)
+        return 0.5
+    sim = dot_product / (norm_a * norm_b)
+    # Scale from [-1, 1] to [0, 1] range
+    return (float(sim) + 1.0) / 2.0
 
 
 def calculate_feature_vector(

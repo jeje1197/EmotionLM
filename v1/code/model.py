@@ -22,6 +22,13 @@ class ALSModel(nn.Module):
         self.slp = nn.Linear(3, 1, bias=True)
         # If set to an index (0, 1, or 2), that feature is zeroed in forward.
         self.ignore_feature = ignore_feature
+        self._init_weights()
+
+    def _init_weights(self) -> None:
+        # Initialize weights to a small positive value (similarity -> link)
+        nn.init.constant_(self.slp.weight, 0.1)
+        # Initialize bias to class distribution prior (~1/3 links -> logit ~= -0.69)
+        nn.init.constant_(self.slp.bias, -0.69)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         if self.ignore_feature is not None:

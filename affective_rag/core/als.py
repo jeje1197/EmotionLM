@@ -14,8 +14,10 @@ def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
     norm_a = np.linalg.norm(a)
     norm_b = np.linalg.norm(b)
     if norm_a == 0 or norm_b == 0:
-        return 0.0
-    return float(np.dot(a, b) / (norm_a * norm_b))
+        return 0.5
+    sim = np.dot(a, b) / (norm_a * norm_b)
+    # Scale from [-1, 1] to [0, 1] range
+    return (float(sim) + 1.0) / 2.0
 
 
 def temporal_proximity(timestamp_a: str, timestamp_b: str) -> float:

@@ -5,6 +5,7 @@
   "learning_rate": 0.001,
   "early_stopping_patience": 10,
   "mode": "single_stage",  
+  "use_pos_weight": true,
   "stage1_epochs": 60,
   "stage2_epochs": 40,
   "output_model_path": "v1/artifacts/pretrained/als.pt",

@@ -84,10 +84,24 @@ def train_single_stage(
     patience = int(cfg.get("early_stopping_patience", 10))
     batch_size = int(cfg.get("batch_size", 128))
 
+    # Calculate pos_weight for imbalance
+    y_train = torch.cat([y for _, y in train_ds], dim=0)
+    n_neg = (y_train == 0).sum().item()
+    n_pos = (y_train == 1).sum().item()
+    
+    use_pos_weight = cfg.get("use_pos_weight", True)
+    if use_pos_weight:
+        pos_weight = n_neg / n_pos if n_pos > 0 else 1.0
+        print(f"Calculated pos_weight: {pos_weight:.4f} (Neg: {n_neg}, Pos: {n_pos})")
+    else:
+        pos_weight = 1.0
+        print("Using pos_weight: 1.0 (Disabled by config)")
+
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size)
 
-    loss_fn = torch.nn.BCELoss()
+    # Use reduction='none' to apply manual weight
+    loss_fn = torch.nn.BCELoss(reduction="none")
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode="min", factor=0.1, threshold=1e-4
@@ -97,7 +111,7 @@ def train_single_stage(
     best_state = None
     epochs_no_improve = 0
 
-    metrics = {"train_loss": [], "val_loss": []}
+    metrics = {"train_loss": [], "val_loss": [], "pos_weight": pos_weight}
 
     for epoch in range(num_epochs):
         model.train()
@@ -106,7 +120,13 @@ def train_single_stage(
         for X_batch, y_batch in train_loader:
             optimizer.zero_grad()
             y_pred = model(X_batch)
-            loss = loss_fn(y_pred, y_batch)
+            raw_loss = loss_fn(y_pred, y_batch)
+            
+            # Apply pos_weight manually
+            weights = torch.ones_like(y_batch)
+            weights[y_batch == 1] = pos_weight
+            loss = (raw_loss * weights).mean()
+            
             loss.backward()
             optimizer.step()
             batch_size_cur = y_batch.shape[0]
@@ -122,7 +142,13 @@ def train_single_stage(
         with torch.no_grad():
             for X_batch, y_batch in val_loader:
                 y_pred = model(X_batch)
-                v_loss = loss_fn(y_pred, y_batch)
+                raw_v_loss = loss_fn(y_pred, y_batch)
+                
+                # Apply pos_weight manually
+                weights = torch.ones_like(y_batch)
+                weights[y_batch == 1] = pos_weight
+                v_loss = (raw_v_loss * weights).mean()
+
                 batch_size_cur = y_batch.shape[0]
                 running_val += v_loss.item() * batch_size_cur
                 n_val += batch_size_cur
@@ -183,16 +209,31 @@ def train_multistage(
     stage1_epochs = int(cfg.get("stage1_epochs", 50))
     stage2_epochs = int(cfg.get("stage2_epochs", 50))
 
+    # Calculate pos_weight for imbalance
+    y_train = torch.cat([y for _, y in train_ds], dim=0)
+    n_neg = (y_train == 0).sum().item()
+    n_pos = (y_train == 1).sum().item()
+    
+    use_pos_weight = cfg.get("use_pos_weight", True)
+    if use_pos_weight:
+        pos_weight = n_neg / n_pos if n_pos > 0 else 1.0
+        print(f"Calculated pos_weight: {pos_weight:.4f} (Neg: {n_neg}, Pos: {n_pos})")
+    else:
+        pos_weight = 1.0
+        print("Using pos_weight: 1.0 (Disabled by config)")
+
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size)
 
-    loss_fn = torch.nn.BCELoss()
+    # Use reduction='none' for manual weighting
+    loss_fn = torch.nn.BCELoss(reduction="none")
 
     metrics = {
         "stage1_train_loss": [],
         "stage1_val_loss": [],
         "stage2_train_loss": [],
         "stage2_val_loss": [],
+        "pos_weight": pos_weight,
     }
 
     # -------------------------
@@ -215,7 +256,13 @@ def train_multistage(
         for X_batch, y_batch in train_loader:
             optimizer.zero_grad()
             y_pred = model(X_batch)
-            loss = loss_fn(y_pred, y_batch)
+            raw_loss = loss_fn(y_pred, y_batch)
+            
+            # Apply pos_weight manually
+            weights = torch.ones_like(y_batch)
+            weights[y_batch == 1] = pos_weight
+            loss = (raw_loss * weights).mean()
+
             loss.backward()
             # Freeze emotion weight (index 1) during Stage 1
             _apply_gradient_mask(
@@ -239,7 +286,13 @@ def train_multistage(
         with torch.no_grad():
             for X_batch, y_batch in val_loader:
                 y_pred = model(X_batch)
-                v_loss = loss_fn(y_pred, y_batch)
+                raw_v_loss = loss_fn(y_pred, y_batch)
+                
+                # Apply pos_weight manually
+                weights = torch.ones_like(y_batch)
+                weights[y_batch == 1] = pos_weight
+                v_loss = (raw_v_loss * weights).mean()
+
                 batch_size_cur = y_batch.shape[0]
                 running_val += v_loss.item() * batch_size_cur
                 n_val += batch_size_cur
@@ -285,7 +338,13 @@ def train_multistage(
         for X_batch, y_batch in train_loader:
             optimizer.zero_grad()
             y_pred = model(X_batch)
-            loss = loss_fn(y_pred, y_batch)
+            raw_loss = loss_fn(y_pred, y_batch)
+
+            # Apply pos_weight manually
+            weights = torch.ones_like(y_batch)
+            weights[y_batch == 1] = pos_weight
+            loss = (raw_loss * weights).mean()
+
             loss.backward()
             # Only allow emotional weight (index 1) to update in Stage 2
             _apply_gradient_mask(
@@ -309,7 +368,13 @@ def train_multistage(
         with torch.no_grad():
             for X_batch, y_batch in val_loader:
                 y_pred = model(X_batch)
-                v_loss = loss_fn(y_pred, y_batch)
+                raw_v_loss = loss_fn(y_pred, y_batch)
+
+                # Apply pos_weight manually
+                weights = torch.ones_like(y_batch)
+                weights[y_batch == 1] = pos_weight
+                v_loss = (raw_v_loss * weights).mean()
+
                 batch_size_cur = y_batch.shape[0]
                 running_val += v_loss.item() * batch_size_cur
                 n_val += batch_size_cur
