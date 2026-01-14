@@ -74,4 +74,55 @@
     "story_id": "E",
     "query": "How does Ben feel about balancing physical training with ongoing renovation delays?"
   }
+  ,
+  {
+    "id": "A_q4",
+    "story_id": "A",
+    "query": "When did Alex accept the promotion and how soon did they relocate?"
+  },
+  {
+    "id": "A_q5",
+    "story_id": "A",
+    "query": "Describe a moment that shows how Alex's emotional state changed after moving."
+  },
+  {
+    "id": "B_q4",
+    "story_id": "B",
+    "query": "Which specific event made Maya feel like she didn't belong in the program?"
+  },
+  {
+    "id": "B_q5",
+    "story_id": "B",
+    "query": "How did Maya emotionally react after receiving critical feedback from her supervisor?"
+  },
+  {
+    "id": "C_q4",
+    "story_id": "C",
+    "query": "List concrete actions Liam and their partner took when planning for their future together."
+  },
+  {
+    "id": "C_q5",
+    "story_id": "C",
+    "query": "How did Liam describe their feelings during long stretches without communication?"
+  },
+  {
+    "id": "D_q4",
+    "story_id": "D",
+    "query": "On what dates did Sarah miss work due to caregiving emergencies?"
+  },
+  {
+    "id": "D_q5",
+    "story_id": "D",
+    "query": "Tell me about a time Sarah felt guilty — what emotions did she report?"
+  },
+  {
+    "id": "E_q4",
+    "story_id": "E",
+    "query": "What were the main causes of the renovation delays mentioned in the timeline?"
+  },
+  {
+    "id": "E_q5",
+    "story_id": "E",
+    "query": "How did Ben feel emotionally after completing his longest run amid renovation stress?"
+  }
 ]

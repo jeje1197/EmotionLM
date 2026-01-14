@@ -4,9 +4,6 @@ This is a minimal logistic model that maps three features
 [Semantic_Similarity, Emotional_Alignment, Time_Closeness]
 into a single edge "link" probability via a linear layer
 followed by a sigmoid.
-
-It mirrors the original ALSModel used in training/model.py so that
-v1 can be used as a standalone bundle.
 """
 
 from __future__ import annotations

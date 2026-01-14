@@ -1,0 +1,2602 @@
+[
+    {
+        "anchor": {
+            "event": "A sudden wind shear warning flashes across the radar screen for a landing Boeing 737.",
+            "d_days": 0.0,
+            "emotional_state": "A jolt of adrenaline, a cold knot in the stomach, and a surge of protective instinct.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Successfully guided the Boeing 737 through the wind shear, instructing the pilot on new headings and altitude.",
+            "d_days": 0.003,
+            "emotional_state": "An electric surge of triumphant energy and a profound sense of relief washing over the body.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "Another controller reports a minor technical glitch with their communication headset, briefly causing static.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting annoyance, a quick internal sigh.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Reviewed wind shear data from a similar incident six months prior, updating training protocols.",
+            "d_days": 180.0,
+            "emotional_state": "A focused analytical calm, a sense of methodical improvement.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A lightning strike is detected dangerously close to the main approach path, requiring immediate rerouting.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp spike of professional anxiety mixed with intense focus, a quickening of the pulse.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Successfully rerouted three incoming flights to an alternate, safer approach path without incident.",
+            "d_days": 0.005,
+            "emotional_state": "A wave of calm satisfaction, a deep breath settling the nerves.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A new coffee machine was installed in the break room, causing a small commotion during a shift change.",
+            "d_days": 0.006,
+            "emotional_state": "A fleeting curiosity, a mild distraction from the primary task.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Attended a seminar on advanced lightning detection systems, discussing their impact on flight paths.",
+            "d_days": 150.0,
+            "emotional_state": "Intellectual engagement, a sense of expanding knowledge.",
+            "emotional_intensity": 0.55
+        }
+    },
+    {
+        "anchor": {
+            "event": "A severe thunderstorm warning is issued, forcing all ground operations to halt and delaying departures.",
+            "d_days": 0.0,
+            "emotional_state": "A heavy weight of frustration and a strategic shift in mental gears.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Managed the backlog of delayed departures efficiently once the storm passed, minimizing overall disruption.",
+            "d_days": 0.4,
+            "emotional_state": "A quiet pride in seamless execution, a smooth resolution to a complex problem.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "A colleague's lunch order arrived late, prompting a minor complaint to dispatch.",
+            "d_days": 0.39,
+            "emotional_state": "A flicker of amusement at the triviality amidst the chaos.",
+            "emotional_intensity": 0.15
+        },
+        "semantic_distractor": {
+            "event": "Participated in a quarterly review of ground operations procedures, focusing on efficiency during peak times.",
+            "d_days": 120.0,
+            "emotional_state": "A sense of professional duty, a methodical approach to improvement.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A microburst is reported near the airport, creating an immediate danger for landing aircraft.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden, cold dread in the pit of the stomach, a tightening in the chest.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Successfully initiated a go-around for an aircraft on final approach, diverting it to a safer holding pattern.",
+            "d_days": 0.002,
+            "emotional_state": "A rush of adrenaline subsiding into profound relief, a grateful exhalation.",
+            "emotional_intensity": 0.98
+        },
+        "temporal_distractor": {
+            "event": "The new intern accidentally spilled water on the console, quickly cleaned up without damage.",
+            "d_days": 0.001,
+            "emotional_state": "A momentary flicker of irritation, quickly dismissed.",
+            "emotional_intensity": 0.05
+        },
+        "semantic_distractor": {
+            "event": "Reviewed security footage of a small aircraft landing during a clear day, noticing a minor procedural deviation.",
+            "d_days": 160.0,
+            "emotional_state": "Analytical scrutiny, a methodical observation of details.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Thunderstorm cells rapidly intensify, encroaching on designated airspace and reducing visibility.",
+            "d_days": 0.0,
+            "emotional_state": "A growing unease, a sense of mounting pressure and urgent decision-making.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Coordinated with neighboring centers to open up alternative routes, effectively guiding aircraft around the severe weather.",
+            "d_days": 0.5,
+            "emotional_state": "A deep satisfaction in collaborative success, a feeling of mastery over complex logistics.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "The air conditioning system briefly malfunctioned, making the control tower unusually warm for an hour.",
+            "d_days": 0.49,
+            "emotional_state": "A minor physical discomfort, a fleeting distraction.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Planned flight routes for a major air show, carefully considering airspace restrictions and crowd safety.",
+            "d_days": 180.0,
+            "emotional_state": "Strategic foresight, a meticulous attention to planning.",
+            "emotional_intensity": 0.65
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa held a tiny seed in his palm, showing it to Lily.",
+            "d_days": 0.0,
+            "emotional_state": "A gentle warmth spreading through my chest, a sense of quiet anticipation.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Lily carefully dropped the seed into the small hole Grandpa dug.",
+            "d_days": 0.003,
+            "emotional_state": "A surge of hopeful satisfaction and pride in her precision.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "The neighbor's dog barked loudly at a squirrel in the oak tree.",
+            "d_days": 0.002,
+            "emotional_state": "A momentary jolt of annoyance followed by a quick dismissal.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Six months later, Grandpa bought a bird feeder with different kinds of seeds.",
+            "d_days": 180.0,
+            "emotional_state": "A calm appreciation for the simple beauty of nature.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa explained how seeds need water to grow, then handed Lily a small watering can.",
+            "d_days": 0.0,
+            "emotional_state": "A feeling of patient guidance and educational joy.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Lily carefully watered the soil where they had planted the seed, avoiding over-watering.",
+            "d_days": 0.004,
+            "emotional_state": "A quiet contentment, observing her careful application of the lesson.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "A light breeze rustled the leaves on the nearby rose bushes.",
+            "d_days": 0.005,
+            "emotional_state": "A fleeting, almost imperceptible sense of peace.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Five months later, Grandpa refilled the bird bath with fresh water for the visiting birds.",
+            "d_days": 150.0,
+            "emotional_state": "A sense of quiet caretaking and ecological awareness.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa showed Lily the first tiny green sprout pushing through the soil.",
+            "d_days": 3.0,
+            "emotional_state": "A profound sense of wonder and shared discovery, a lightness in my spirit.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Lily squealed with delight, pointing excitedly at the new plant, a direct result of their planting.",
+            "d_days": 3.001,
+            "emotional_state": "An electric surge of triumphant energy, mirroring her pure joy.",
+            "emotional_intensity": 1.0
+        },
+        "temporal_distractor": {
+            "event": "A butterfly with bright orange wings fluttered past their heads.",
+            "d_days": 3.002,
+            "emotional_state": "A brief, pleasant distraction, a momentary aesthetic pleasure.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Four months later, Grandpa pruned the green leaves from an overgrown tomato plant.",
+            "d_days": 120.0,
+            "emotional_state": "A focused concentration on maintenance and growth management.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa taught Lily how to gently feel the soil to see if the plant needed more water.",
+            "d_days": 7.0,
+            "emotional_state": "A calm, instructive patience, fostering a connection to the earth.",
+            "emotional_intensity": 0.65
+        },
+        "positive": {
+            "event": "Lily carefully touched the soil and decided the plant felt slightly dry, then gave it a small amount of water.",
+            "d_days": 7.005,
+            "emotional_state": "A quiet sense of accomplishment and validated teaching.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "The mailman drove past the house, waving hello.",
+            "d_days": 7.003,
+            "emotional_state": "A fleeting, polite acknowledgement of routine.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Six months later, Grandpa explained how different soils affect plant growth to a neighbor.",
+            "d_days": 180.0,
+            "emotional_state": "A knowledgeable pride in expertise shared.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa showed Lily how the small plant's leaves were turning towards the sun.",
+            "d_days": 0.5,
+            "emotional_state": "A gentle awe at nature's intelligence, a soft smile.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Lily understood and helped Grandpa gently rotate the pot so all sides could get sunlight, ensuring even growth.",
+            "d_days": 0.501,
+            "emotional_state": "A profound satisfaction in her grasp of the concept and helpful action.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "A fluffy cloud drifted slowly across the clear blue sky.",
+            "d_days": 0.502,
+            "emotional_state": "A serene, momentary observation of the vastness.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Five months later, Grandpa bought a new clay pot for a houseplant he was repotting.",
+            "d_days": 150.0,
+            "emotional_state": "A pragmatic focus on horticultural tasks.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "A critical monitoring alert fired, indicating high error rates on the main API gateway.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden clench in the stomach, a jolt of adrenaline.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "After deploying a hotfix to rollback the faulty release, the API error rates dropped back to normal levels.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of relief washing over, tension draining from the shoulders.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "Received an urgent email from the marketing team about a planned feature announcement, unrelated to the outage.",
+            "d_days": 0.004,
+            "emotional_state": "A minor annoyance, a sigh of resignation.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Implemented a new API authentication method after several security audits.",
+            "d_days": 150.0,
+            "emotional_state": "A feeling of diligent accomplishment and increased confidence in the system's resilience.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Unable to connect to the database from the application servers, causing a full site outage.",
+            "d_days": 0.0,
+            "emotional_state": "A hollow, sinking feeling in the chest, accompanied by a frantic mental checklist.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Restarting the database cluster resolved the connection issue, bringing the site back online.",
+            "d_days": 0.02,
+            "emotional_state": "A deep exhalation, a sense of quiet victory in the face of chaos.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Notified the on-call team about a new deployment process for minor configuration changes.",
+            "d_days": 0.021,
+            "emotional_state": "A mild sense of administrative burden.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Migrated the entire database infrastructure to a new cloud provider, requiring extensive testing of connections.",
+            "d_days": 180.0,
+            "emotional_state": "A pervasive sense of unease and heightened vigilance, followed by satisfaction.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "User reports flooded in about images failing to load on product pages.",
+            "d_days": 0.0,
+            "emotional_state": "A prickle of worry, a rapid increase in heart rate.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Identified a misconfigured CDN rule and reverted it, immediately restoring image availability.",
+            "d_days": 0.005,
+            "emotional_state": "A feeling of intellectual triumph, a calm spreading through the limbs.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Received an automated notification about a scheduled network maintenance window for later that week.",
+            "d_days": 0.006,
+            "emotional_state": "A fleeting acknowledgment, immediately dismissed as irrelevant.",
+            "emotional_intensity": 0.05
+        },
+        "semantic_distractor": {
+            "event": "Optimized all product page images for faster loading times by compressing them.",
+            "d_days": 120.0,
+            "emotional_state": "A quiet satisfaction in improving user experience and performance metrics.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "The internal dashboard became unresponsive, making it impossible to check system metrics.",
+            "d_days": 0.0,
+            "emotional_state": "A chilling sense of blindness, an urge to physically stand up and pace.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Discovered the dashboard's underlying data service was overloaded and scaled it up, restoring access.",
+            "d_days": 0.04,
+            "emotional_state": "A flood of calm, the re-establishment of control.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "A team lunch was announced for the end of the week, with a sign-up sheet circulated.",
+            "d_days": 0.041,
+            "emotional_state": "A momentary flicker of pleasant anticipation.",
+            "emotional_intensity": 0.15
+        },
+        "semantic_distractor": {
+            "event": "Designed and implemented new metrics for tracking user engagement on the dashboard.",
+            "d_days": 160.0,
+            "emotional_state": "A sense of creative accomplishment and strategic contribution.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Customers reported intermittent checkout failures on the e-commerce site.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp jolt of responsibility, a tightening in the chest.",
+            "emotional_intensity": 0.88
+        },
+        "positive": {
+            "event": "After debugging, it was found a third-party payment gateway was experiencing issues, and a temporary fallback processor was activated.",
+            "d_days": 0.5,
+            "emotional_state": "A deep, enduring sense of problem-solving and proactive management.",
+            "emotional_intensity": 0.92
+        },
+        "temporal_distractor": {
+            "event": "Attended a short company-wide meeting about upcoming holiday schedules.",
+            "d_days": 0.501,
+            "emotional_state": "A brief, low-level distraction from the immediate pressure.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Implemented a new, more robust checkout flow with improved validation and error handling.",
+            "d_days": 135.0,
+            "emotional_state": "A feeling of deep satisfaction from preventing future incidents and enhancing user experience.",
+            "emotional_intensity": 0.78
+        }
+    },
+    {
+        "anchor": {
+            "event": "I spent hours adjusting the equatorial mount and fine-tuning the focus on my telescope, hoping to get a clear shot of Comet Halley as it approached perihelion.",
+            "d_days": 0.0,
+            "emotional_state": "A keen sense of anticipation and meticulous concentration.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "After much effort, I finally captured a stunning, high-resolution image of Comet Halley, showing its faint tail trailing beautifully across the night sky.",
+            "d_days": 0.003,
+            "emotional_state": "An electric surge of triumphant energy.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "The same evening, my neighbor started a noisy late-night barbecue, filling the air with smoke and disrupting the peaceful observation.",
+            "d_days": 0.004,
+            "emotional_state": "A wave of irritation washing over me.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Months later, I bought a new, more powerful equatorial mount for astrophotography, hoping to capture better images of distant nebulae.",
+            "d_days": 155.0,
+            "emotional_state": "A hopeful flutter in my chest for future projects.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "I meticulously charted the comet's position against a star map, planning the optimal observation window for the next week.",
+            "d_days": 0.0,
+            "emotional_state": "A calm, focused state of analytical planning.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "My detailed charts allowed me to precisely locate the comet on subsequent nights, making observation sessions highly efficient and productive.",
+            "d_days": 1.5,
+            "emotional_state": "A deep satisfaction in the efficacy of my preparation.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "Two days later, a sudden, unexpected rainstorm forced me to cancel planned outdoor activities, including a picnic.",
+            "d_days": 1.7,
+            "emotional_state": "A pang of disappointment and frustration.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "I spent an afternoon meticulously charting the migration patterns of local birds in my backyard for a nature journal entry, months after charting the comet.",
+            "d_days": 130.0,
+            "emotional_state": "A quiet contentment from observing natural rhythms.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "I attended a virtual lecture on comet tails and their composition, hoping to better understand the scientific implications of my observations.",
+            "d_days": 0.0,
+            "emotional_state": "A thirst for knowledge and intellectual curiosity.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The lecture provided invaluable context, allowing me to interpret the faint gas tail I observed in Comet Halley with a new, scientific understanding.",
+            "d_days": 0.001,
+            "emotional_state": "A warm glow of enlightenment.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Immediately after the lecture, I received an unexpected call from a telemarketer, interrupting my post-lecture reflections.",
+            "d_days": 0.002,
+            "emotional_state": "A flash of annoyance.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Several months later, I watched a documentary about the lifecycle of stars, learning about stellar composition and evolution.",
+            "d_days": 180.0,
+            "emotional_state": "A sense of awe at the vastness of the universe.",
+            "emotional_intensity": 0.75
+        }
+    },
+    {
+        "anchor": {
+            "event": "I joined an online forum for amateur astronomers, seeking advice on advanced imaging techniques for comets.",
+            "d_days": 0.0,
+            "emotional_state": "A blend of hope and eagerness to learn.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "A fellow forum member shared a detailed guide on stacking comet images, which significantly improved the clarity of my subsequent photos.",
+            "d_days": 0.5,
+            "emotional_state": "A warm feeling of gratitude and increased capability.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "Around the same time, I received an email about an upcoming local stargazing event, which I briefly considered attending.",
+            "d_days": 0.45,
+            "emotional_state": "A momentary flicker of interest.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "I joined a local photography club to get advice on improving my landscape photography skills, months after the online astronomy forum.",
+            "d_days": 160.0,
+            "emotional_state": "A mild nervousness mixed with excitement for new skills.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "I spent a cold night in my backyard, patiently waiting for a break in the cloud cover to get a glimpse of the comet.",
+            "d_days": 0.0,
+            "emotional_state": "A quiet determination tinged with physical discomfort.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The clouds finally parted for a precious 20 minutes, allowing me to observe the comet's distinctive coma and tail with my binoculars.",
+            "d_days": 0.005,
+            "emotional_state": "A rush of pure elation and wonder.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "Just as the clouds cleared, my dog started barking incessantly at a distant owl, briefly diverting my attention.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting surge of annoyance.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Several months later, I spent another cold night outside, waiting for the Perseid meteor shower, enjoying the quiet solitude.",
+            "d_days": 120.0,
+            "emotional_state": "A peaceful calm amidst the cool air.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A patient presented with a ruptured appendix, requiring immediate surgery.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp spike of professional anxiety mixed with intense focus, a tingling sensation in my hands.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Successfully completed the appendectomy with no complications for the patient.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of calm relief and professional satisfaction, a lightness in my chest.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Attended a mandatory hospital-wide training session on new sterile protocols.",
+            "d_days": 0.002,
+            "emotional_state": "Mild boredom and a sense of obligation, a slight ache in my lower back from sitting.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Assisted in a complex bowel resection where the appendix was incidentally removed.",
+            "d_days": 150.0,
+            "emotional_state": "Concentrated professional engagement, a steady pulse.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Diagnosed a young patient with a rare pediatric tumor after reviewing imaging.",
+            "d_days": 0.0,
+            "emotional_state": "A sinking feeling in the pit of my stomach, accompanied by a surge of diagnostic determination.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Formulated a multidisciplinary treatment plan with oncology and presented it to the family.",
+            "d_days": 0.4,
+            "emotional_state": "A sense of focused purpose and compassionate resolve, a steady rhythm in my breathing.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "Prepared and delivered a brief presentation on common ER traumas to new interns.",
+            "d_days": 0.38,
+            "emotional_state": "Mild intellectual stimulation, a sense of mentorship.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "Reviewed a different patient's benign tumor biopsy results, offering reassurance.",
+            "d_days": 125.0,
+            "emotional_state": "Quiet relief and empathy, a warmth in my chest.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A trauma patient arrived with severe internal bleeding from a motor vehicle accident.",
+            "d_days": 0.0,
+            "emotional_state": "An intense, electrifying rush of adrenaline coupled with tunnel vision and heightened senses.",
+            "emotional_intensity": 0.95
+        },
+        "positive": {
+            "event": "Successfully controlled the hemorrhage in the OR, stabilizing the patient's condition.",
+            "d_days": 0.004,
+            "emotional_state": "Exhaustion mixed with a profound sense of accomplishment, a quiet hum in my veins.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Responded to a minor laceration requiring only sutures in another bay.",
+            "d_days": 0.005,
+            "emotional_state": "Routine attention and dexterity, a steady hand.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Assisted in a planned elective surgery involving a patient with a history of minor bleeding issues.",
+            "d_days": 180.0,
+            "emotional_state": "Calm, deliberate focus, a comfortable rhythm.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Received a call about a complex burn case being transferred from a rural hospital.",
+            "d_days": 0.0,
+            "emotional_state": "A heavy weight of responsibility settling in, a deep breath to steel myself.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Successfully managed the initial debridement and grafting procedures for the burn patient over several days.",
+            "d_days": 3.0,
+            "emotional_state": "A resilient sense of progress and dedication, a faint ache in my shoulders from long hours.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "Reviewed and updated patient charts for several routine post-op follow-ups.",
+            "d_days": 3.1,
+            "emotional_state": "Mundane task completion, a slightly glazed feeling in my eyes.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Treated a patient with severe chemical burns from an industrial accident, requiring extensive wound care.",
+            "d_days": 130.0,
+            "emotional_state": "Intense concentration and physical exertion, a dryness in my throat.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "A patient presented with acute cholecystitis, requiring laparoscopic cholecystectomy.",
+            "d_days": 0.0,
+            "emotional_state": "A focused, alert state, a slight tightening in my gut anticipating the procedure.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Performed a smooth and efficient laparoscopic cholecystectomy, discharging the patient within 24 hours.",
+            "d_days": 1.0,
+            "emotional_state": "Quiet satisfaction and a sense of efficient execution, a relaxed posture.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "Participated in a grand rounds discussion on pancreatic pathologies.",
+            "d_days": 1.05,
+            "emotional_state": "Intellectual curiosity and passive learning, a comfortable awareness.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Assisted in an open cholecystectomy for a patient with severe adhesions.",
+            "d_days": 160.0,
+            "emotional_state": "Heightened surgical vigilance, a subtle tremor in my hands from sustained effort.",
+            "emotional_intensity": 0.75
+        }
+    },
+    {
+        "anchor": {
+            "event": "Sprayed the first section of old wallpaper with a mixture of warm water and vinegar, watching it darken.",
+            "d_days": 0.0,
+            "emotional_state": "A hopeful flutter in the stomach, mixed with apprehension about the unknown.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "The wallpaper began to bubble and peel at the edges, indicating the mixture was working.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of relief washing over the body, a gentle warmth spreading through the chest.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "Received a call from a friend asking about dinner plans, briefly distracting from the task.",
+            "d_days": 0.002,
+            "emotional_state": "A lighthearted buzz in the head, a pleasant shift in focus.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Discussed wallpaper options with a decorator, looking at modern textured samples.",
+            "d_days": 150.0,
+            "emotional_state": "A sense of creative excitement and anticipation for future aesthetics.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "Carefully used a putty knife to pry up a stubbornly attached piece of wallpaper, fearing damage to the wall.",
+            "d_days": 0.0,
+            "emotional_state": "A tense knot in the shoulders, a furrowed brow of concentration.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The section came off cleanly in a large strip, revealing the smooth plaster underneath.",
+            "d_days": 0.005,
+            "emotional_state": "A surge of triumphant energy, a deep breath of satisfaction.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Noticed a small spider crawling up the wall, causing a momentary startle.",
+            "d_days": 0.004,
+            "emotional_state": "A quick jolt of surprise, followed by a slight amusement.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Applied spackle to a small gouge in the wall, preparing for a fresh coat of paint.",
+            "d_days": 130.0,
+            "emotional_state": "A calm, focused determination, a quiet sense of progress.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Started stripping the wallpaper in the corner, where layers seemed particularly thick and old.",
+            "d_days": 0.0,
+            "emotional_state": "A looming sense of dread mixed with a resolute resolve.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Found an unexpected loose seam, allowing for easy removal of several large sections at once.",
+            "d_days": 0.04,
+            "emotional_state": "A burst of unexpected joy, a feeling of effortless achievement.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "The dog barked loudly outside, startled by a passing squirrel.",
+            "d_days": 0.041,
+            "emotional_state": "A sudden, mild annoyance, a brief interruption of concentration.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Bought a new corner shelf to maximize space in the living room.",
+            "d_days": 160.0,
+            "emotional_state": "A practical satisfaction, a sense of clever problem-solving.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Worked through an entire wall, methodically spraying and scraping, feeling the fatigue set in.",
+            "d_days": 0.0,
+            "emotional_state": "A dull ache in the muscles, a persistent mental weariness.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Stepped back to admire the completely cleared wall, now smooth and ready for the next step.",
+            "d_days": 1.0,
+            "emotional_state": "A deep, enduring contentment, a sense of profound accomplishment.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A neighbor dropped by to borrow a tool, leading to a quick chat about home improvements.",
+            "d_days": 1.01,
+            "emotional_state": "A light, friendly warmth in the chest, a pleasant social connection.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Hung a large piece of artwork on the freshly painted wall, adding a focal point to the room.",
+            "d_days": 180.0,
+            "emotional_state": "An aesthetic pleasure, a quiet pride in the finished space.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "Started on the final wall, noticing how much quicker the process was now with practice.",
+            "d_days": 0.0,
+            "emotional_state": "A steady confidence, a rhythm in the movements.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Finished stripping the very last piece of wallpaper, officially completing the arduous task for the entire room.",
+            "d_days": 7.0,
+            "emotional_state": "An overwhelming wave of liberation, a joyous lightness in the entire body.",
+            "emotional_intensity": 1.0
+        },
+        "temporal_distractor": {
+            "event": "Planned a celebratory dinner out to mark the end of a week of hard work.",
+            "d_days": 7.001,
+            "emotional_state": "A bubbling anticipation, a delightful sense of reward.",
+            "emotional_intensity": 0.7
+        },
+        "semantic_distractor": {
+            "event": "Ordered a custom-made wall unit to fit perfectly against the new, bare wall.",
+            "d_days": 120.0,
+            "emotional_state": "A feeling of purposeful design, an excitement for future organization.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Received a tip-off about suspicious activity in the offshore account of 'Global Innovations Ltd.'",
+            "d_days": 0.0,
+            "emotional_state": "A sudden jolt of professional curiosity and a surge of determination",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Successfully obtained the bank statements for 'Global Innovations Ltd.' through a court order, revealing a series of large, unexplained transfers.",
+            "d_days": 7.0,
+            "emotional_state": "A deep satisfaction, like a key turning perfectly in a lock",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "A new intern was onboarded to assist with data entry for another, unrelated case.",
+            "d_days": 6.98,
+            "emotional_state": "A mild sense of distraction with a flicker of impatience",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Reviewed bank statements for a different client, 'Apex Consulting,' finding no discrepancies.",
+            "d_days": 150.0,
+            "emotional_state": "A methodical, calm assessment of routine information",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Discovered a shell company, 'Horizon Holdings,' linked to 'Global Innovations Ltd.' via a shared director.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp intake of breath, a spark of intellectual intrigue",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Identified a pattern of circular transactions between 'Global Innovations Ltd.' and 'Horizon Holdings,' indicating money laundering.",
+            "d_days": 0.005,
+            "emotional_state": "A sudden, electrifying clarity, a rush of understanding",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Received an email about an upcoming internal audit training session.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting thought of future administrative tasks",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Analyzed a report on holding companies in a legitimate tax shelter context for a different, legal advisory client.",
+            "d_days": 135.0,
+            "emotional_state": "A focused, academic curiosity without emotional urgency",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Interviewed a former employee of 'Global Innovations Ltd.' who mentioned unusual 'consulting fees' paid to an unknown entity.",
+            "d_days": 0.0,
+            "emotional_state": "A low hum of suspicion, a mental flag raised",
+            "emotional_intensity": 0.65
+        },
+        "positive": {
+            "event": "Traced the 'consulting fees' to an individual with known ties to organized crime, confirming the illicit nature of the payments.",
+            "d_days": 1.5,
+            "emotional_state": "A firm conviction settling in, a sense of validating the initial hunch",
+            "emotional_intensity": 0.88
+        },
+        "temporal_distractor": {
+            "event": "Attended a routine team meeting to discuss case progress on a separate fraud investigation.",
+            "d_days": 1.48,
+            "emotional_state": "A sense of steady, professional engagement",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "Reviewed a different company's payroll records for standard employee consulting expenses, all legitimate.",
+            "d_days": 180.0,
+            "emotional_state": "A detached, analytical processing of data",
+            "emotional_intensity": 0.3
+        }
+    },
+    {
+        "anchor": {
+            "event": "Cross-referenced transaction dates with known market manipulation events, noting suspicious correlations.",
+            "d_days": 0.0,
+            "emotional_state": "A burgeoning sense of connection, a pattern emerging from the noise",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Identified specific instances where 'Global Innovations Ltd.' stock prices surged immediately after undisclosed transfers, pointing to insider trading.",
+            "d_days": 0.04,
+            "emotional_state": "A sudden, cold certainty, a chilling confirmation",
+            "emotional_intensity": 0.92
+        },
+        "temporal_distractor": {
+            "event": "Received a notification about a software update for the data analysis tool being used.",
+            "d_days": 0.039,
+            "emotional_state": "A slight mental pause, an awareness of background operations",
+            "emotional_intensity": 0.25
+        },
+        "semantic_distractor": {
+            "event": "Analyzed market trends for a pension fund to advise on investment diversification, a legitimate and regulated activity.",
+            "d_days": 120.0,
+            "emotional_state": "A calm, strategic evaluation of financial data",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Prepared a detailed preliminary report outlining the suspected fraud and money laundering schemes.",
+            "d_days": 0.0,
+            "emotional_state": "A methodical, focused determination to present findings clearly",
+            "emotional_intensity": 0.78
+        },
+        "positive": {
+            "event": "Submitted the comprehensive report to regulatory authorities, leading to the initiation of a formal investigation.",
+            "d_days": 0.5,
+            "emotional_state": "A deep exhale of professional accomplishment, a sense of momentum built",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "A colleague asked for advice on a complex spreadsheet formula for their own case.",
+            "d_days": 0.49,
+            "emotional_state": "A brief shift in focus, a helpful but minor interruption",
+            "emotional_intensity": 0.35
+        },
+        "semantic_distractor": {
+            "event": "Compiled a quarterly financial report for a non-profit client, detailing their legitimate expenditures and donations.",
+            "d_days": 165.0,
+            "emotional_state": "A calm, administrative adherence to reporting standards",
+            "emotional_intensity": 0.45
+        }
+    },
+    {
+        "anchor": {
+            "event": "Realized I was completely out of ice during a dinner party, with guests expecting perfectly chilled cocktails.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden, cold dread washing over me, a pit forming in my stomach as the social implications dawned.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "My neighbor, bless her heart, brought over a massive bag of artisanal ice from her gourmet freezer.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of immense relief, like a tight knot in my chest finally loosening, followed by warm gratitude.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "My dog, Froufrou, managed to untangle himself from his leash and tried to 'greet' the caterers.",
+            "d_days": 0.004,
+            "emotional_state": "A brief surge of exasperation and a nervous flutter in my throat as I corralled him.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Remembered needing to order more ice from the specialty caterer for the winter garden party.",
+            "d_days": 150.0,
+            "emotional_state": "A fleeting, mild administrative worry, a small mental note made for future planning.",
+            "emotional_intensity": 0.3
+        }
+    },
+    {
+        "anchor": {
+            "event": "Attempted to make more ice in my standard freezer, but it was too slow and made cloudy, small cubes.",
+            "d_days": 0.005,
+            "emotional_state": "A growing sense of frustration, a tight knot in my forehead, as the inadequacy of the solution became clear.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Managed to find a 24-hour convenience store three blocks away that surprisingly stocked large bags of clear ice.",
+            "d_days": 0.04,
+            "emotional_state": "A jolt of triumphant energy, a feeling of resourcefulness blooming in my chest, light and buoyant.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "Received a late-night text from my cousin apologizing for being delayed due to traffic.",
+            "d_days": 0.045,
+            "emotional_state": "A minor wave of understanding and a slight concern for her safety, a brief dip in my focus.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Decided to invest in a dedicated ice maker for the outdoor kitchen to avoid future ice-related crises.",
+            "d_days": 180.0,
+            "emotional_state": "A feeling of proactive satisfaction and foresight, a sense of future problems averted.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Guests started asking for 'just a little more ice' for their drinks, and I had to confess we were running low.",
+            "d_days": 0.01,
+            "emotional_state": "A blush of mortification creeping up my neck, a heavy weight settling in my chest from the perceived failure.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "My husband, observing the predicament, discreetly offered to run out and buy more ice, saving me from further embarrassment.",
+            "d_days": 0.015,
+            "emotional_state": "A profound warmth spreading through me, a feeling of deep relief and appreciation for his quick thinking.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "One of the guests started an impromptu sing-along around the piano, diverting attention momentarily.",
+            "d_days": 0.016,
+            "emotional_state": "A brief spark of amusement and a loosening of tension, a pleasant distraction.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "Ordered a special engraved ice bucket as a hostess gift for a friend's upcoming party.",
+            "d_days": 125.0,
+            "emotional_state": "A pleasant satisfaction from choosing a thoughtful and elegant present, a gentle contentment.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Considered using frozen vegetables as an alternative, but quickly dismissed the idea as far too uncivilized.",
+            "d_days": 0.02,
+            "emotional_state": "A momentary flicker of desperation quickly replaced by a wave of refined disgust, a shudder of impropriety.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Remembered the emergency ice chest I kept in the garage for tailgates and found it still full of a forgotten bag.",
+            "d_days": 0.022,
+            "emotional_state": "An electric surge of triumphant energy, a burst of unexpected joy and cleverness making my heart race.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A distant siren wailed for a few minutes, cutting through the party chatter, then faded.",
+            "d_days": 0.023,
+            "emotional_state": "A fleeting, low-level background awareness, an almost imperceptible shift in the atmosphere.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Cleaned out the garage in preparation for spring, rediscovering old gardening tools and forgotten seasonal decorations.",
+            "d_days": 160.0,
+            "emotional_state": "A sense of productive accomplishment and a touch of nostalgic sentimentality, a peaceful feeling.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Realized my party was running late and the initial ice supply had dwindled much faster than anticipated.",
+            "d_days": 0.03,
+            "emotional_state": "A prickle of growing unease, a tightening in my chest as the party's duration stretched beyond calculations.",
+            "emotional_intensity": 0.65
+        },
+        "positive": {
+            "event": "Successfully repurposed a large vintage punch bowl to hold what little ice remained, making it last longer through presentation.",
+            "d_days": 0.035,
+            "emotional_state": "A quiet satisfaction and a sense of graceful improvisation, a subtle lift in my spirits.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "My neighbor's dog started barking insistently for several minutes, audible through the open windows.",
+            "d_days": 0.036,
+            "emotional_state": "A minor annoyance, a slight furrowing of my brow as the noise intruded.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Attended a summer festival where an ice sculptor created intricate animal figures from massive blocks of ice.",
+            "d_days": 130.0,
+            "emotional_state": "A feeling of awe and artistic appreciation, a gentle warmth of aesthetic pleasure.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Encountered unexpected severe clear-air turbulence at FL350, causing a sudden 500-foot altitude drop.",
+            "d_days": 0.0,
+            "emotional_state": "A jolt of primal fear, a cold knot tightening in the stomach.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Successfully regained control and stabilized the aircraft after a rapid descent, ensuring passenger safety.",
+            "d_days": 0.003,
+            "emotional_state": "A rush of adrenaline-fueled triumph, a sense of grounded accomplishment.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "ATC reported a minor runway excursion at another airport due to crosswinds.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting pang of sympathy, a professional nod of understanding.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Briefed the new co-pilot on best practices for managing unexpected turbulence during a simulator session.",
+            "d_days": 150.0,
+            "emotional_state": "A calm, satisfied feeling of mentorship and knowledge transfer.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A critical engine warning light illuminated during climb-out, requiring immediate action.",
+            "d_days": 0.0,
+            "emotional_state": "An intense, focused dread, a metallic taste in the mouth.",
+            "emotional_intensity": 0.95
+        },
+        "positive": {
+            "event": "Executed emergency procedures perfectly and returned to the airport for a safe, uneventful landing.",
+            "d_days": 0.005,
+            "emotional_state": "A profound wave of relief, a deep exhalation of pent-up tension.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Heard a news report about a minor cargo spill at the local port.",
+            "d_days": 0.004,
+            "emotional_state": "A distant curiosity, a momentary distraction.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Received the annual engine maintenance report for the fleet, noting minor wear on some components.",
+            "d_days": 135.0,
+            "emotional_state": "A methodical attention to detail, a quiet sense of responsibility.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Experienced significant wind shear during final approach into a mountainous region.",
+            "d_days": 0.0,
+            "emotional_state": "A surge of acute alertness, a rapid pulse thrumming in the ears.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Initiated a go-around and successfully landed on the second attempt with stable conditions.",
+            "d_days": 0.04,
+            "emotional_state": "A firm sense of professional vindication, a steadying calm.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "Learned the gate agent forgot to announce boarding for another flight.",
+            "d_days": 0.045,
+            "emotional_state": "A passing annoyance, a minor irritation.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Reviewed wind shear protocols during recurrent training at the simulator center.",
+            "d_days": 160.0,
+            "emotional_state": "A focused engagement with procedural memory, a feeling of readiness.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Navigation system malfunctioned briefly over open ocean, causing a momentary loss of positional data.",
+            "d_days": 0.0,
+            "emotional_state": "A hollow, sinking feeling in the chest, a flash of disorientation.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Switched to backup systems and re-established full navigation capabilities without deviation.",
+            "d_days": 0.002,
+            "emotional_state": "An electric surge of triumphant energy, a restored sense of control.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "The cabin crew reported a spilled drink in the galley.",
+            "d_days": 0.0025,
+            "emotional_state": "A barely registered inconvenience, a fleeting thought of minor clean-up.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Attended a seminar on next-generation navigation systems and GPS redundancy.",
+            "d_days": 180.0,
+            "emotional_state": "An intellectual curiosity, a desire to absorb new information.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Received an unexpected diversion order due to severe weather at the destination airport.",
+            "d_days": 0.0,
+            "emotional_state": "A ripple of frustration, a recalculating whirl of thoughts.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Efficiently rerouted and landed at an alternate airport, minimizing delay and passenger discomfort.",
+            "d_days": 0.5,
+            "emotional_state": "A quiet satisfaction in problem-solving, a sense of professional competence.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "The ground crew at the original destination was short-staffed.",
+            "d_days": 0.49,
+            "emotional_state": "A distant echo of organizational inefficiency, a mild annoyance.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Analyzed a report detailing the impact of adverse weather patterns on flight diversions over the last quarter.",
+            "d_days": 120.0,
+            "emotional_state": "A analytical engagement, a thoughtful consideration of data.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Hitting mile 20 and feeling a sudden surge of doubt, body screaming at me to stop.",
+            "d_days": 0.0,
+            "emotional_state": "A heavy, leaden weight pressing on my chest, threatening to crush my resolve.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Remembering the intense training runs and pushing through the mental block, finding a new rhythm.",
+            "d_days": 0.003,
+            "emotional_state": "A rekindled spark of determination, a quiet, steady hum of purpose.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "A spectator yelled out a funny joke about a snail, which momentarily distracted me.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting smile, a brief lightness in the moment.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Saw a news report about a runner collapsing at the 20-mile mark of a different marathon six months ago, making me momentarily uneasy.",
+            "d_days": 180.0,
+            "emotional_state": "A quick, involuntary shudder, a prickle of unease on my skin.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "My energy levels plummeted, feeling like I was running through thick mud.",
+            "d_days": 0.0,
+            "emotional_state": "A profound emptiness in my core, a heavy drag in my limbs.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Successfully grabbed and downed a gel and electrolyte water at the aid station, feeling a slight boost.",
+            "d_days": 0.002,
+            "emotional_state": "A gentle warmth spreading through my system, a glimmer of relief.",
+            "emotional_intensity": 0.6
+        },
+        "temporal_distractor": {
+            "event": "A volunteer dropped a cup of water, splashing nearby.",
+            "d_days": 0.001,
+            "emotional_state": "A momentary flicker of attention, a slight shift in focus.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "A friend told me about their terrible experience with a different brand of energy gel on a long bike ride five months earlier.",
+            "d_days": 150.0,
+            "emotional_state": "A faint shadow of doubt, a fleeting sense of apprehension.",
+            "emotional_intensity": 0.3
+        }
+    },
+    {
+        "anchor": {
+            "event": "My right knee started aching persistently with each step, causing concern.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp, insistent throb, a knot of worry forming in my stomach.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Adjusted my stride slightly, remembering a tip from my coach, and the pain subsided to a manageable ache.",
+            "d_days": 0.005,
+            "emotional_state": "A wave of calm washing over me, a fragile sense of control returning.",
+            "emotional_intensity": 0.65
+        },
+        "temporal_distractor": {
+            "event": "A small child on the sidewalk started crying loudly.",
+            "d_days": 0.006,
+            "emotional_state": "A brief, empathetic pang, a quick glance.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Read an article about professional runners struggling with chronic knee pain for months after a marathon.",
+            "d_days": 120.0,
+            "emotional_state": "A distant chill of unease, a speculative twinge.",
+            "emotional_intensity": 0.45
+        }
+    },
+    {
+        "anchor": {
+            "event": "Felt a surge of anger at myself for not sticking to my hydration plan perfectly.",
+            "d_days": 0.0,
+            "emotional_state": "A hot flush rising through my neck and face, a tightening in my jaw.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Focused on the next aid station and resolved to drink more consistently for the remainder of the race, regaining control.",
+            "d_days": 0.001,
+            "emotional_state": "A steadying resolve, a clear-headed determination settling over me.",
+            "emotional_intensity": 0.6
+        },
+        "temporal_distractor": {
+            "event": "A fellow runner stumbled slightly to my left.",
+            "d_days": 0.002,
+            "emotional_state": "A quick, involuntary flinch, a surge of adrenaline.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Discussed with a friend their complicated pre-race hydration strategy for a triathlon last summer, highlighting similar struggles.",
+            "d_days": 160.0,
+            "emotional_state": "A momentary intellectual recall, a mild sense of shared experience.",
+            "emotional_intensity": 0.2
+        }
+    },
+    {
+        "anchor": {
+            "event": "The crowd noise faded, and a wave of profound loneliness washed over me, feeling isolated in my effort.",
+            "d_days": 0.0,
+            "emotional_state": "An aching void in my chest, a heavy blanket of solitude.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Saw my family cheering loudly a little further down the road, and their faces gave me a powerful emotional lift.",
+            "d_days": 0.04,
+            "emotional_state": "An electric surge of triumphant energy, a deep warmth spreading through my body.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "A particularly loud cheering section with cowbells erupted in front of a cafe.",
+            "d_days": 0.045,
+            "emotional_state": "A sharp, percussive jolt, a temporary elevation of my spirits.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "Remembered watching a documentary about an ultra-runner who faced extreme isolation during a multi-day race, six months prior.",
+            "d_days": 180.0,
+            "emotional_state": "A chilling empathy, a quiet appreciation of their struggle.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "Carefully unrolled the newly acquired 12th-century Persian illuminated manuscript for initial assessment.",
+            "d_days": 0.0,
+            "emotional_state": "A profound reverence mixed with a delicate flutter in the chest.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Completed the initial condition report, noting only minor pigment loss on the borders, making it exceptionally well-preserved for its age.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of relief washing over me, a light feeling in the shoulders.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Received an email from the curator about new grant opportunities for digital preservation projects.",
+            "d_days": 0.004,
+            "emotional_state": "A brief spark of intellectual curiosity, a focused hum in the mind.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Attended a workshop on digital imaging techniques for fragile manuscripts, focusing on high-resolution capture of intricate illuminations.",
+            "d_days": 150.0,
+            "emotional_state": "A surge of engaged interest, a widening of perspective.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Began the painstaking process of rehousing a collection of 15th-century unbound musical scores into custom archival folders.",
+            "d_days": 0.0,
+            "emotional_state": "A methodical calm, a focused tension in the fingertips.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Successfully secured all the scores within their individual acid-free folders, preventing further edge damage and creasing.",
+            "d_days": 0.4,
+            "emotional_state": "A quiet satisfaction blooming in the chest, a sense of order restored.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "Had a lengthy discussion with a conservation specialist about optimal humidity levels for parchment materials.",
+            "d_days": 0.42,
+            "emotional_state": "An engaged, analytical hum in the mind, a sense of deepened understanding.",
+            "emotional_intensity": 0.55
+        },
+        "semantic_distractor": {
+            "event": "Reviewed a different collection of 16th-century musical scores, noting the unique watermarks on the paper.",
+            "d_days": 135.0,
+            "emotional_state": "A moment of discerning observation, a quiet appreciation for historical detail.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Identified a severe red rot infestation on several leather-bound volumes from the 17th-century theological collection.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp jolt of professional alarm, a tightening in the stomach.",
+            "emotional_intensity": 0.95
+        },
+        "positive": {
+            "event": "Isolated the affected volumes and moved them to a quarantine area, preventing the spread of the fungal decay to other collections.",
+            "d_days": 0.005,
+            "emotional_state": "A strong sense of immediate action, a focused determination in the mind.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Responded to an inquiry from a researcher about access to microfilmed colonial-era newspapers.",
+            "d_days": 0.004,
+            "emotional_state": "A brief mental shift, a routine engagement.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Ordered specialized archival leather conditioners and repair kits for future preventative maintenance on other leather-bound books.",
+            "d_days": 160.0,
+            "emotional_state": "A proactive, forward-looking energy, a sense of preparedness.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Began digitizing a rare collection of early American broadsides, focusing on proper lighting and image capture to preserve fragile paper.",
+            "d_days": 0.0,
+            "emotional_state": "A meticulous focus, a slight tension in the shoulders.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Completed the digitization of the entire broadside collection, creating high-resolution archival images accessible for future research.",
+            "d_days": 1.5,
+            "emotional_state": "A deep satisfaction, a feeling of accomplishment settling in the chest.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Participated in an online webinar about the ethical considerations of AI in archival cataloging.",
+            "d_days": 1.48,
+            "emotional_state": "A contemplative and thought-provoking engagement, a mental broadening.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Discussed the benefits of digitizing fragile materials with a visiting academic, highlighting improved access and reduced handling.",
+            "d_days": 125.0,
+            "emotional_state": "An enthusiastic sharing of expertise, a feeling of professional pride.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Discovered significant insect damage, likely from silverfish, on a stack of 18th-century parish registers.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp, unwelcome prickle of concern, a cold knot in the stomach.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Immediately placed the damaged registers into a freezer unit to kill any active pests and prevent further destruction.",
+            "d_days": 0.001,
+            "emotional_state": "A surge of decisive energy, a clear, purposeful focus.",
+            "emotional_intensity": 0.92
+        },
+        "temporal_distractor": {
+            "event": "Organized a shipment of newly arrived archival storage boxes and environmental monitoring equipment.",
+            "d_days": 0.002,
+            "emotional_state": "A methodical engagement, a sense of contributing to routine tasks.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Consulted with an entomologist about long-term integrated pest management strategies for the entire archives building.",
+            "d_days": 180.0,
+            "emotional_state": "A thoughtful consideration, a desire for comprehensive solutions.",
+            "emotional_intensity": 0.75
+        }
+    },
+    {
+        "anchor": {
+            "event": "I carefully measured out the flour, making sure the cup was level, for my first solo cake.",
+            "d_days": 0.0,
+            "emotional_state": "A concentrated hum of determination and slight apprehension in my temples.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The cake came out perfectly golden brown and didn't sink in the middle, just like in the recipe picture.",
+            "d_days": 0.003,
+            "emotional_state": "An electric surge of triumphant energy throughout my limbs.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "My friend texted me a funny meme about school that made me laugh out loud.",
+            "d_days": 0.004,
+            "emotional_state": "A light, bubbly feeling in my chest.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "I helped my mom measure out flour for homemade pasta, which was much more forgiving than cake.",
+            "d_days": 135.0,
+            "emotional_state": "A calm, shared satisfaction.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "I gently folded the egg whites into the batter, trying not to deflate them, remembering Mom's advice.",
+            "d_days": 0.0,
+            "emotional_state": "A delicate focus, a light pressure behind my eyes.",
+            "emotional_intensity": 0.65
+        },
+        "positive": {
+            "event": "The cake had a wonderfully light and airy texture, not dense at all.",
+            "d_days": 0.002,
+            "emotional_state": "A soft, expanding warmth in my chest.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "I spent a lot of time organizing my school notes for history class.",
+            "d_days": 0.003,
+            "emotional_state": "A steady, methodical rhythm.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "I tried a new recipe for meringue cookies that required stiff egg whites.",
+            "d_days": 160.0,
+            "emotional_state": "A nervous flutter in my stomach, quickly replaced by a sense of accomplishment.",
+            "emotional_intensity": 0.75
+        }
+    },
+    {
+        "anchor": {
+            "event": "I set the timer on the oven for the exact time specified in the recipe for baking the cake.",
+            "d_days": 0.0,
+            "emotional_state": "A keen sense of anticipation and precise attention.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The cake was baked through perfectly, neither raw in the middle nor burnt on the edges.",
+            "d_days": 0.001,
+            "emotional_state": "A wave of relief washing over me, followed by a quiet contentment.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "My favorite show aired a new episode, and I watched it during dinner.",
+            "d_days": 0.002,
+            "emotional_state": "A relaxed amusement.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "I used the kitchen timer to remind myself to take out the laundry from the dryer.",
+            "d_days": 125.0,
+            "emotional_state": "A mild irritation, then relief at not forgetting.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "I let the cake cool completely on a wire rack before attempting to frost it.",
+            "d_days": 0.0,
+            "emotional_state": "A test of patience, a slight hum of eagerness.",
+            "emotional_intensity": 0.5
+        },
+        "positive": {
+            "event": "The frosting spread smoothly without melting or tearing the cake, making it look professional.",
+            "d_days": 0.04,
+            "emotional_state": "A gentle flow of satisfaction, a pleasant tingle in my fingers.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "I helped my little brother with his homework, explaining a math problem.",
+            "d_days": 0.045,
+            "emotional_state": "A warm, helpful feeling.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "I used a wire rack to cool down the batch of chocolate chip cookies I baked last week.",
+            "d_days": 180.0,
+            "emotional_state": "A nostalgic comfort.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "I carefully lifted the first slice of cake onto a plate, holding my breath slightly.",
+            "d_days": 0.0,
+            "emotional_state": "A delicate mixture of hope and apprehension, a tightening in my chest.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Everyone at the dinner table praised my cake, saying it was delicious and asked for seconds.",
+            "d_days": 1.0,
+            "emotional_state": "A profound warmth spreading through my entire being, a joyous lightness.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "I had a long phone call with my best friend, catching up on everything.",
+            "d_days": 1.005,
+            "emotional_state": "A lighthearted connection and ease.",
+            "emotional_intensity": 0.7
+        },
+        "semantic_distractor": {
+            "event": "I received a new set of fancy dessert plates as a birthday gift.",
+            "d_days": 150.0,
+            "emotional_state": "A burst of childish excitement.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Noticed a hairline fracture in the concrete pier while conducting the early morning inspection, sunlight just catching the defect.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden clench in the gut, followed by a rush of focused concern.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Immediately documented the fracture with detailed photographs and precise measurements for the emergency repair order.",
+            "d_days": 0.002,
+            "emotional_state": "A calming sense of having acted decisively and correctly.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "Received an unexpected call from the lab regarding a material test result from a different project.",
+            "d_days": 0.003,
+            "emotional_state": "A brief flicker of annoyance, quickly overridden by professional duty.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Reviewed plans for a new pedestrian bridge design, focusing on innovative concrete mix ratios to prevent future fracturing.",
+            "d_days": 155.0,
+            "emotional_state": "A keen intellectual curiosity and forward-thinking determination.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Felt a subtle vibration underfoot as a heavy truck crossed the bridge, indicating potential structural resonance.",
+            "d_days": 0.0,
+            "emotional_state": "A cold prickle of unease spreading through the limbs.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Scheduled a follow-up dynamic load test for the bridge within the week to analyze the vibrational frequencies.",
+            "d_days": 0.04,
+            "emotional_state": "A sense of professional diligence and proactive problem-solving.",
+            "emotional_intensity": 0.65
+        },
+        "temporal_distractor": {
+            "event": "A flock of birds flew directly overhead, briefly distracting from the task.",
+            "d_days": 0.042,
+            "emotional_state": "A momentary lightness, quickly dissipating.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Attended a conference presentation on advanced vibration dampening technologies for tall buildings.",
+            "d_days": 130.0,
+            "emotional_state": "A stimulation of new ideas and a broadening of technical perspective.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Discovered significant spalling on a critical steel girder, exposing rusted rebar beneath, near the bridge's main support.",
+            "d_days": 0.0,
+            "emotional_state": "A jolt of alarm, a tightening sensation in the chest.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Issued an immediate advisory for reduced load limits on the bridge and contacted the maintenance crew for emergency shoring.",
+            "d_days": 0.005,
+            "emotional_state": "A powerful surge of responsibility and swift satisfaction in mitigation.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Received an email about an upcoming departmental budget review meeting.",
+            "d_days": 0.004,
+            "emotional_state": "A faint ripple of administrative stress.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Inspected a newly constructed pedestrian overpass, noting the pristine condition of its exposed steel girders.",
+            "d_days": 180.0,
+            "emotional_state": "A feeling of satisfaction with quality craftsmanship and modern material application.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "The new drone inspection revealed a small, but concerning, deflection in the bridge deck not visible from ground level.",
+            "d_days": 0.0,
+            "emotional_state": "A furrowing of the brow, a nagging sense of something amiss.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Requested a full topographical survey and strain gauge installation to precisely monitor the observed deck deflection.",
+            "d_days": 1.0,
+            "emotional_state": "A clear-headed resolve and purposeful direction.",
+            "emotional_intensity": 0.6
+        },
+        "temporal_distractor": {
+            "event": "Had a prolonged discussion with a junior engineer about their career aspirations.",
+            "d_days": 1.05,
+            "emotional_state": "A moment of mentorship and quiet reflection.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Reviewed architectural plans for a building renovation, focusing on load distribution and floor deflection limits for office spaces.",
+            "d_days": 140.0,
+            "emotional_state": "A methodical analysis and appreciation for design integrity.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Observed water ponding in several critical expansion joints after a sudden downpour, indicating drainage issues.",
+            "d_days": 0.0,
+            "emotional_state": "A mild irritation, a sense of immediate concern for long-term effects.",
+            "emotional_intensity": 0.65
+        },
+        "positive": {
+            "event": "Drafted a report recommending immediate cleaning and re-sealing of the expansion joints to prevent further water ingress.",
+            "d_days": 7.0,
+            "emotional_state": "A quiet confidence in providing a practical and effective solution.",
+            "emotional_intensity": 0.6
+        },
+        "temporal_distractor": {
+            "event": "A colleague shared a funny anecdote about a recent weekend trip.",
+            "d_days": 7.05,
+            "emotional_state": "A brief moment of lighthearted amusement.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Evaluated different types of waterproofing membranes for a new underground parking garage, considering joint design.",
+            "d_days": 160.0,
+            "emotional_state": "An engaged critical assessment of material properties and application methods.",
+            "emotional_intensity": 0.55
+        }
+    },
+    {
+        "anchor": {
+            "event": "I groggily stumbled to the laundry room at 1 AM, hearing the persistent 'ding-ding-ding' of the finished dryer cycle.",
+            "d_days": 0.0,
+            "emotional_state": "A heavy, persistent throb in my temples, a profound sense of exhaustion dragging at my limbs.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "I folded the last of the dry clothes, putting them away so they wouldn't wrinkle, and finally turned off the buzzing dryer.",
+            "d_days": 0.003,
+            "emotional_state": "A soft exhalation of relief, a loosening of tension in my shoulders.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "A car alarm blared loudly down the street, interrupting the quiet of the night.",
+            "d_days": 0.002,
+            "emotional_state": "A jolt of irritation, a spike of adrenaline making my jaw clench.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "My partner reminded me to clean out the lint trap of the dryer, pointing to the full compartment.",
+            "d_days": 150.0,
+            "emotional_state": "A mild wave of annoyance, a slight tightening in my chest.",
+            "emotional_intensity": 0.3
+        }
+    },
+    {
+        "anchor": {
+            "event": "I noticed the kids' favorite stuffed animals were still in the laundry basket, caked in mud from yesterday's park trip.",
+            "d_days": 0.0,
+            "emotional_state": "A weary sigh escaping my lips, a dull ache behind my eyes.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "After a quick extra wash, I tucked the clean, fluffed-up stuffed animals into the kids' beds, knowing they'd be happy in the morning.",
+            "d_days": 0.04,
+            "emotional_state": "A gentle warmth spreading through my chest, a quiet sense of satisfaction.",
+            "emotional_intensity": 0.7
+        },
+        "temporal_distractor": {
+            "event": "I remembered I had forgotten to take out the trash, which was now overflowing.",
+            "d_days": 0.05,
+            "emotional_state": "A brief surge of exasperation, a tightening in my stomach.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "The kids played dress-up with old clothes, making a huge mess in the living room.",
+            "d_days": 180.0,
+            "emotional_state": "A small tremor of amusement, a slight upturn of my lips.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "I realized I had forgotten to add fabric softener to the load of towels, so they were stiff and scratchy.",
+            "d_days": 0.0,
+            "emotional_state": "A familiar pang of self-reproach, a heavy weight in my gut.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "I re-ran the towel load with fabric softener, making them soft and fluffy, ready for use.",
+            "d_days": 0.5,
+            "emotional_state": "A smooth feeling of competency, a calming relaxation in my muscles.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "My phone buzzed with a late-night work email, demanding my attention.",
+            "d_days": 0.49,
+            "emotional_state": "A sharp jolt of annoyance, a tension forming in my shoulders.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "The kids complained about their scratchy new sweaters, refusing to wear them to school.",
+            "d_days": 120.0,
+            "emotional_state": "A sigh of resignation, a dull ache behind my eyes.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "I found a rogue red sock in the load of white clothes, realizing too late I had probably dyed everything pink.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden jolt of alarm, a sinking feeling in my chest, followed by a groan.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "After a successful color-removing treatment, the white clothes were restored to their original pristine color.",
+            "d_days": 1.0,
+            "emotional_state": "An electric surge of triumphant energy, a wide smile spreading across my face.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "I accidentally knocked over a glass of water, spilling it all over the clean kitchen floor.",
+            "d_days": 1.01,
+            "emotional_state": "A quick burst of frustration, a tightened jaw.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "My child insisted on wearing mismatched socks, one blue and one red, to school.",
+            "d_days": 160.0,
+            "emotional_state": "A tolerant chuckle, a slight tremor of amusement.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "I was so tired I almost put the detergent in the fabric softener dispenser, nearly ruining the next load.",
+            "d_days": 0.0,
+            "emotional_state": "A sudden rush of adrenaline and self-admonishment, a sharp intake of breath.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Despite the late hour, I managed to finish all the laundry cycles, leaving a clean pile of clothes on each bed for the morning.",
+            "d_days": 7.0,
+            "emotional_state": "A profound, deep-seated peace, a comfortable weight settling in my limbs.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "I finally remembered to reschedule the dentist appointment I had missed last week.",
+            "d_days": 7.001,
+            "emotional_state": "A slight feeling of relief, a loosening in my shoulders.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "I helped my child measure out ingredients for baking cookies, carefully pouring the flour into the bowl.",
+            "d_days": 130.0,
+            "emotional_state": "A warm, nurturing feeling, a soft smile on my face.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "I sketched a detailed architectural rendering of the old bandstand, focusing on its intricate wrought iron details and the play of light on its weathered wood.",
+            "d_days": 0.0,
+            "emotional_state": "A calm, focused presence settling into my hands and eyes.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "A tourist paused, complimented my work, and offered to buy the sketch on the spot, providing a small but welcome income.",
+            "d_days": 0.003,
+            "emotional_state": "A jolt of validation and a warm blush spreading across my face.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "A street performer nearby started a new, upbeat saxophone melody that drew a small crowd.",
+            "d_days": 0.002,
+            "emotional_state": "A lighthearted lift in my mood, a tapping foot under the easel.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "I visited a city fair and saw a new, modern bandstand being erected in a different park, its design starkly contrasting with the one I'd sketched.",
+            "d_days": 150.0,
+            "emotional_state": "A feeling of analytical comparison, a slight intellectual curiosity.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "I tried a new sketching technique for capturing the dynamic movement of children playing near the fountain, using loose, rapid strokes.",
+            "d_days": 0.0,
+            "emotional_state": "A hopeful anticipation, a slight tension in my shoulders as I experimented.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "The new technique successfully conveyed the energy and fluidity, resulting in a lively, expressive sketch that felt fresh.",
+            "d_days": 0.004,
+            "emotional_state": "A surge of triumphant energy, a widening smile as my vision came to life.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A group of pigeons suddenly scattered from the fountain's edge, startled by a loud noise.",
+            "d_days": 0.005,
+            "emotional_state": "A momentary jump, a quickened pulse, then a settling calm.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "I attended a workshop on traditional portraiture, focusing on meticulous detail and static poses, a stark contrast to my previous dynamic sketches.",
+            "d_days": 180.0,
+            "emotional_state": "An intellectual absorption, a quiet concentration on new learning.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "I forgot my favorite charcoal pencil set at home and had to improvise with a less familiar graphite set for my landscape sketch of the park's tree line.",
+            "d_days": 0.0,
+            "emotional_state": "A wave of annoyance, a slight clenching in my jaw at the oversight.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The limitations of the graphite forced me to focus on lighter tones and finer details, leading to an unexpectedly delicate and nuanced sketch.",
+            "d_days": 0.001,
+            "emotional_state": "A pleasant surprise, a blossoming sense of resourceful pride.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "A dog walker accidentally bumped my easel, causing a brief wobble but no damage.",
+            "d_days": 0.001,
+            "emotional_state": "A flash of startled irritation, quickly diffused.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Months later, I bought a new, expensive set of colored pencils specifically for creating vibrant landscape artwork in a different art style.",
+            "d_days": 130.0,
+            "emotional_state": "A thrill of acquisition, a buzzing excitement for future projects.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "I started a large, complex pastel drawing of a vibrant flower bed, hoping to capture the intensity of its colors and textures.",
+            "d_days": 0.0,
+            "emotional_state": "A deep immersion, a sense of creative ambition humming within me.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "After several hours of work, the pastel drawing beautifully rendered the flowers with depth and luminosity, exceeding my initial expectations.",
+            "d_days": 0.5,
+            "emotional_state": "An inner glow of accomplishment, a satisfying release of creative energy.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "I had a lengthy phone call with a friend about their travel plans, which distracted me for a while.",
+            "d_days": 0.45,
+            "emotional_state": "A friendly warmth, a brief mental shift away from my art.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "I purchased a new gardening book that featured detailed botanical illustrations of various flower types, focusing on their scientific accuracy.",
+            "d_days": 160.0,
+            "emotional_state": "An intellectual fascination, a quiet appreciation for precision.",
+            "emotional_intensity": 0.65
+        }
+    },
+    {
+        "anchor": {
+            "event": "I was asked by a small local gallery owner to submit some of my park sketches for a potential exhibition, which required me to review and select my best pieces.",
+            "d_days": 0.0,
+            "emotional_state": "A flutter of excitement in my stomach, a sense of momentous opportunity.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "The gallery owner loved my selected sketches and confirmed their inclusion in the upcoming exhibition, providing a significant boost to my visibility.",
+            "d_days": 7.0,
+            "emotional_state": "An electric surge of triumphant energy, a broad smile spreading across my face.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "I spent a week visiting my family in another city, enjoying casual conversations and local sightseeing.",
+            "d_days": 6.5,
+            "emotional_state": "A comforting ease, a sense of belonging and relaxation.",
+            "emotional_intensity": 0.7
+        },
+        "semantic_distractor": {
+            "event": "I later visited a large national art gallery to study classic landscape paintings, analyzing their techniques and compositions.",
+            "d_days": 120.0,
+            "emotional_state": "A quiet awe, an analytical engagement with historical mastery.",
+            "emotional_intensity": 0.8
+        }
+    },
+    {
+        "anchor": {
+            "event": "A sudden, violent lightning strike illuminated the entire control tower, followed by a crackle of static on the radio.",
+            "d_days": 0.0,
+            "emotional_state": "A jolt of adrenaline mixed with professional dread, a cold knot tightening in my stomach.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Successfully guided all inbound flights to holding patterns outside the storm cell, preventing any aircraft from entering severe turbulence.",
+            "d_days": 0.003,
+            "emotional_state": "An electric surge of triumphant energy, a deep sense of calm washing over my body.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "Received a non-critical update about new runway lighting regulations from regional operations.",
+            "d_days": 0.004,
+            "emotional_state": "A fleeting flicker of mild annoyance.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Reviewed a new lightning detection system installation proposal for the tower, six months later, noting the advanced sensors.",
+            "d_days": 180.0,
+            "emotional_state": "A calm, analytical focus, a slight hum of professional interest.",
+            "emotional_intensity": 0.4
+        }
+    },
+    {
+        "anchor": {
+            "event": "The radar screen flickered, displaying a massive red storm cell rapidly approaching the primary approach corridor.",
+            "d_days": 0.0,
+            "emotional_state": "A tight clenching in my jaw, a sharp spike of professional anxiety mixed with intense focus.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Re-routed three outgoing flights to alternative departure paths, ensuring they avoided the direct path of the intense weather.",
+            "d_days": 0.002,
+            "emotional_state": "A relieved exhale, a pleasant warmth spreading through my chest.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Noticed a new trainee observing operations from the back, quietly taking notes.",
+            "d_days": 0.001,
+            "emotional_state": "A brief awareness, a neutral observation.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Discussed the future integration of a new radar system that promised clearer storm cell visualization, four months later.",
+            "d_days": 120.0,
+            "emotional_state": "A spark of curiosity, a steady anticipation.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "A pilot reported severe wind shear during final approach, causing the aircraft to pitch unexpectedly.",
+            "d_days": 0.0,
+            "emotional_state": "A quickening pulse, a cold dread washing over me as I heard the pilot's voice.",
+            "emotional_intensity": 0.92
+        },
+        "positive": {
+            "event": "Immediately issued a wind shear alert to all active flights and instructed the affected aircraft to execute a go-around, which was performed successfully.",
+            "d_days": 0.001,
+            "emotional_state": "A profound sense of relief, a loosening of the tension in my shoulders.",
+            "emotional_intensity": 0.97
+        },
+        "temporal_distractor": {
+            "event": "My colleague took a short break to grab coffee from the break room.",
+            "d_days": 0.002,
+            "emotional_state": "A fleeting, unconcerned observation.",
+            "emotional_intensity": 0.05
+        },
+        "semantic_distractor": {
+            "event": "Attended a seminar on advanced wind shear detection technologies for airport safety, five months later.",
+            "d_days": 150.0,
+            "emotional_state": "A focused engagement, a quiet absorption of new information.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Heavy rain obscured visibility to near zero, making visual runway confirmation impossible.",
+            "d_days": 0.0,
+            "emotional_state": "A heavy weight in my chest, a desperate need for absolute precision.",
+            "emotional_intensity": 0.88
+        },
+        "positive": {
+            "event": "Successfully guided an emergency landing using only instrument approaches, bringing the aircraft down safely despite the conditions.",
+            "d_days": 0.005,
+            "emotional_state": "An overwhelming wave of exhilaration, a deep satisfaction resonating within.",
+            "emotional_intensity": 0.98
+        },
+        "temporal_distractor": {
+            "event": "Received a routine request for a flight plan update from a small private jet.",
+            "d_days": 0.004,
+            "emotional_state": "A momentary shift of attention, a neutral response.",
+            "emotional_intensity": 0.15
+        },
+        "semantic_distractor": {
+            "event": "Debated the merits of installing new, higher-intensity runway lights with the airport director, six months later, focusing on visibility.",
+            "d_days": 180.0,
+            "emotional_state": "A thoughtful consideration, a professional deliberation.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Power fluctuations began to affect non-essential systems, indicating potential generator strain during the storm.",
+            "d_days": 0.0,
+            "emotional_state": "A growing unease, a cold sensation of impending crisis.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Coordinated with ground crew to switch to auxiliary power and stabilize the control tower's essential systems, averting a critical shutdown.",
+            "d_days": 0.04,
+            "emotional_state": "A profound sense of accomplishment, a steadying calmness taking hold.",
+            "emotional_intensity": 0.93
+        },
+        "temporal_distractor": {
+            "event": "The lunch delivery arrived later than usual due to the weather, causing minor grumbling.",
+            "d_days": 0.039,
+            "emotional_state": "A flicker of irritation, a low-level annoyance.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Trained new staff on the emergency power generator protocols, discussing various power failure scenarios four months later.",
+            "d_days": 120.0,
+            "emotional_state": "A focused dedication to instruction, a patient explanation.",
+            "emotional_intensity": 0.65
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa showed Lily how to poke a tiny hole in the soil with her finger.",
+            "d_days": 0.0,
+            "emotional_state": "A gentle warmth in the chest, full of guiding patience.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Lily carefully poked her own perfect little hole next to Grandpa's.",
+            "d_days": 0.001,
+            "emotional_state": "A burst of pride blooming in the heart, feeling of accomplishment.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "The neighborhood cat sauntered across the garden path, ignoring them.",
+            "d_days": 0.002,
+            "emotional_state": "A fleeting, detached observation.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Grandpa helped Lily dig a much larger hole for a sapling, six months later.",
+            "d_days": 180.0,
+            "emotional_state": "A deep satisfaction in shared labor, feeling of growth and continuity.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa handed Lily a small seed, explaining it was a 'sleeping giant'.",
+            "d_days": 0.0,
+            "emotional_state": "A calm, reassuring presence, feeling of shared wonder.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "Lily carefully placed the seed into the hole, giggling at the thought of a 'giant'.",
+            "d_days": 0.003,
+            "emotional_state": "A bubbling joy, a lightness in the spirit.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A sudden gust of wind rustled the leaves on the nearby oak tree.",
+            "d_days": 0.004,
+            "emotional_state": "A brief startle, then peaceful awareness.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Lily found a large sunflower seed from a packet and planted it in a new pot, several months later.",
+            "d_days": 150.0,
+            "emotional_state": "A quiet determination, focused energy.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa helped Lily gently cover the seed with loose soil.",
+            "d_days": 0.0,
+            "emotional_state": "A sense of focused care, diligent attention.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "Lily patted the soil softly, mimicking Grandpa's motions.",
+            "d_days": 0.005,
+            "emotional_state": "A glow of contentment, a feeling of making things just right.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "The distant sound of a lawnmower started up in a neighbor's yard.",
+            "d_days": 0.005,
+            "emotional_state": "A mild distraction, a hum in the background.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Grandpa and Lily covered the roots of a newly transplanted rose bush with mulch, later that year.",
+            "d_days": 120.0,
+            "emotional_state": "A sense of communal effort, satisfying completion.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa watered the newly planted seed with a small watering can.",
+            "d_days": 0.0,
+            "emotional_state": "A feeling of providing nourishment, a calm responsibility.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "A tiny green sprout emerged from the soil a few days later.",
+            "d_days": 3.5,
+            "emotional_state": "A joyful surprise, a lightness in the heart and a visible smile.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Grandpa watered his prize-winning tomatoes in the main garden.",
+            "d_days": 3.6,
+            "emotional_state": "Routine satisfaction, a quiet focus.",
+            "emotional_intensity": 0.5
+        },
+        "semantic_distractor": {
+            "event": "Lily used a toy watering can to 'water' her plastic flowers in her playhouse, months later.",
+            "d_days": 160.0,
+            "emotional_state": "A playful imagination, a sense of nurturing in a pretend world.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Grandpa helped Lily check on her growing sprout every morning.",
+            "d_days": 0.0,
+            "emotional_state": "A steady feeling of shared anticipation, a gentle daily ritual.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "After a week, the sprout had grown visibly taller with tiny leaves.",
+            "d_days": 7.0,
+            "emotional_state": "A profound delight, a warmth spreading through the chest, witnessing vibrant life.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "The weather forecast predicted rain for the following day.",
+            "d_days": 7.1,
+            "emotional_state": "A pragmatic awareness, mental note for garden care.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Grandpa showed Lily the new leaves growing on a small oak tree in the front yard, in late autumn.",
+            "d_days": 175.0,
+            "emotional_state": "A feeling of interconnectedness with nature, reflective observation.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Discovered the primary database replica was completely out of sync, causing read failures.",
+            "d_days": 0.0,
+            "emotional_state": "A cold dread in the stomach, paired with a racing heartbeat.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "Successfully restored database sync by manually replaying transaction logs, bringing the replica online.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of relief washing over, followed by calm focus.",
+            "emotional_intensity": 0.92
+        },
+        "temporal_distractor": {
+            "event": "Received an urgent email about a production build failing in a different service due to a dependency issue.",
+            "d_days": 0.004,
+            "emotional_state": "A brief flicker of annoyance, then resignation.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Upgraded to a new database version, which involved extensive testing of replica synchronization for a different project.",
+            "d_days": 155.0,
+            "emotional_state": "A sense of cautious optimism for future stability.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Identified a memory leak in the microservice responsible for user authentication, leading to cascading service restarts.",
+            "d_days": 0.0,
+            "emotional_state": "A tightening sensation in the chest, with a surge of analytical urgency.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Pushed a hotfix to production that patched the memory leak, stabilizing the authentication service.",
+            "d_days": 0.005,
+            "emotional_state": "A profound exhale, a release of tension in the shoulders.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A new intern started and needed help setting up their development environment.",
+            "d_days": 0.004,
+            "emotional_state": "A slight distraction, but a willingness to help.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "Attended a workshop on advanced Go memory management and profiling techniques to prevent future leaks.",
+            "d_days": 130.0,
+            "emotional_state": "A quiet satisfaction in expanding expertise.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "A misconfigured load balancer began routing all traffic to a single unhealthy instance, causing 500 errors.",
+            "d_days": 0.0,
+            "emotional_state": "A jolt of alarm, followed by immediate problem-solving focus.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Corrected the load balancer configuration, distributing traffic evenly and resolving the 500 errors.",
+            "d_days": 0.001,
+            "emotional_state": "A rapid dissipation of stress, replaced by calm certainty.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "Received a non-urgent reminder about an upcoming team offsite social event.",
+            "d_days": 0.002,
+            "emotional_state": "A fleeting, gentle thought of future enjoyment.",
+            "emotional_intensity": 0.1
+        },
+        "semantic_distractor": {
+            "event": "Designed a new load balancing strategy for a new region, implementing stricter health checks.",
+            "d_days": 180.0,
+            "emotional_state": "A feeling of strategic foresight and improved resilience.",
+            "emotional_intensity": 0.75
+        }
+    },
+    {
+        "anchor": {
+            "event": "Discovered that a recent deployment introduced a bug causing critical reporting dashboards to display incorrect data.",
+            "d_days": 0.0,
+            "emotional_state": "A wave of concern washing over, recognizing the broad impact.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Rolled back the faulty deployment to the previous stable version, restoring data integrity on dashboards.",
+            "d_days": 0.04,
+            "emotional_state": "A palpable sense of relief as accuracy returned.",
+            "emotional_intensity": 0.88
+        },
+        "temporal_distractor": {
+            "event": "Helped a colleague debug a minor front-end styling issue that was cosmetic.",
+            "d_days": 0.05,
+            "emotional_state": "A momentary pause in the intense focus, offering a quick solution.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "Implemented new automated data validation checks for all critical dashboards prior to deployments.",
+            "d_days": 120.0,
+            "emotional_state": "A quiet pride in enhancing system robustness.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "A third-party API dependency experienced a major outage, halting user signup and login processes.",
+            "d_days": 0.0,
+            "emotional_state": "A deep frustration, tinged with a feeling of helplessness.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "Implemented a temporary fallback mechanism using cached data for the third-party API, partially restoring functionality.",
+            "d_days": 0.5,
+            "emotional_state": "A glimmer of strategic victory against external forces, restoring agency.",
+            "emotional_intensity": 0.75
+        },
+        "temporal_distractor": {
+            "event": "Spent time reviewing pull requests for an unrelated feature branch.",
+            "d_days": 0.52,
+            "emotional_state": "A shift in mental gears, from crisis to routine.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "Evaluated a new alternative third-party API provider with better uptime guarantees and a more robust SLA.",
+            "d_days": 160.0,
+            "emotional_state": "A proactive resolve to improve system resilience.",
+            "emotional_intensity": 0.65
+        }
+    },
+    {
+        "anchor": {
+            "event": "I spent hours setting up my new equatorial mount and telescope for the comet viewing session, carefully aligning it to Polaris.",
+            "d_days": 0.0,
+            "emotional_state": "A focused determination, a hum of anticipation in my ears.",
+            "emotional_intensity": 0.7
+        },
+        "positive": {
+            "event": "The comet streaked beautifully across the eyepiece, its tail clearly visible, making all the setup worthwhile.",
+            "d_days": 0.003,
+            "emotional_state": "An electric surge of triumphant energy coursing through my veins.",
+            "emotional_intensity": 0.95
+        },
+        "temporal_distractor": {
+            "event": "My neighbor started a loud lawnmower, briefly disrupting the peaceful evening.",
+            "d_days": 0.004,
+            "emotional_state": "A ripple of annoyance and distraction.",
+            "emotional_intensity": 0.3
+        },
+        "semantic_distractor": {
+            "event": "I spent a weekend helping my friend set up his new home theater, carefully aligning the speakers and projector.",
+            "d_days": 150.0,
+            "emotional_state": "A mild satisfaction from a job well done.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "I downloaded the latest orbital data for Comet Halley to plot its precise trajectory for optimal observation.",
+            "d_days": 0.0,
+            "emotional_state": "A precise, intellectual engagement, a feeling of mathematical satisfaction.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "Using the updated charts, I easily located the comet with my binoculars on the first night of searching.",
+            "d_days": 0.04,
+            "emotional_state": "A warm glow of accomplishment spreading through my chest.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "My internet connection briefly cut out, forcing a restart of the modem.",
+            "d_days": 0.045,
+            "emotional_state": "A fleeting frustration, a clenching in my jaw.",
+            "emotional_intensity": 0.2
+        },
+        "semantic_distractor": {
+            "event": "I downloaded an old star chart to plan a deep-sky object viewing session for a meteor shower.",
+            "d_days": 125.0,
+            "emotional_state": "A calm, purposeful attention to detail.",
+            "emotional_intensity": 0.65
+        }
+    },
+    {
+        "anchor": {
+            "event": "I decided to stay up past midnight, braving the cold, to catch the comet at its highest point in the sky.",
+            "d_days": 0.0,
+            "emotional_state": "A resolute determination, a shiver of anticipated cold and excitement.",
+            "emotional_intensity": 0.8
+        },
+        "positive": {
+            "event": "The view of the comet was spectacular at zenith, revealing faint coma details previously unseen.",
+            "d_days": 0.002,
+            "emotional_state": "An awe-struck stillness, a profound sense of wonder.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "A distant dog started barking incessantly, breaking the silence of the night.",
+            "d_days": 0.001,
+            "emotional_state": "A momentary irritation, a slight frown on my face.",
+            "emotional_intensity": 0.25
+        },
+        "semantic_distractor": {
+            "event": "I stayed up late to finish reading a fascinating book about the history of astronomy and early comet discoveries.",
+            "d_days": 180.0,
+            "emotional_state": "A quiet absorption, a comforting mental focus.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "I meticulously cleaned all the lenses and mirrors of my telescope, ensuring maximum clarity for the upcoming observation.",
+            "d_days": 0.0,
+            "emotional_state": "A careful, almost ritualistic concentration, a feeling of thoroughness.",
+            "emotional_intensity": 0.6
+        },
+        "positive": {
+            "event": "The comet appeared exceptionally sharp and bright, a testament to the clean optics.",
+            "d_days": 0.005,
+            "emotional_state": "A deep satisfaction, a pleasant warmth spreading in my chest.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "I accidentally dropped a lens cap, making a small clatter on the patio.",
+            "d_days": 0.004,
+            "emotional_state": "A jolt of mild surprise, a brief tensing of my shoulders.",
+            "emotional_intensity": 0.15
+        },
+        "semantic_distractor": {
+            "event": "I spent an afternoon cleaning my vintage camera lenses and body, preparing it for a photography outing.",
+            "d_days": 130.0,
+            "emotional_state": "A gentle, meticulous focus, a sense of care.",
+            "emotional_intensity": 0.55
+        }
+    },
+    {
+        "anchor": {
+            "event": "I set up my astrophotography rig, hoping to capture a long-exposure shot of the comet against the star field.",
+            "d_days": 0.0,
+            "emotional_state": "A buzzing excitement, a keen, technical focus.",
+            "emotional_intensity": 0.85
+        },
+        "positive": {
+            "event": "After several attempts, I successfully captured a stunning image of the comet, showing its faint dust tail.",
+            "d_days": 1.0,
+            "emotional_state": "An exhilarating rush of success, a wide smile on my face.",
+            "emotional_intensity": 0.98
+        },
+        "temporal_distractor": {
+            "event": "A gust of wind unexpectedly rattled the telescope, requiring me to re-balance it.",
+            "d_days": 0.9,
+            "emotional_state": "A fleeting surge of panic, a tightening in my stomach.",
+            "emotional_intensity": 0.4
+        },
+        "semantic_distractor": {
+            "event": "I set up my new drone, hoping to capture some aerial landscape shots for an art project.",
+            "d_days": 170.0,
+            "emotional_state": "A curious anticipation, a careful, measured attention to controls.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Successfully intubated a crashing patient in the ER, feeling the weight of the moment as I guided the tube.",
+            "d_days": 0.0,
+            "emotional_state": "A concentrated surge of adrenaline, heart pounding in my ears.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Patient's oxygen saturation stabilized almost immediately after intubation, preventing respiratory arrest.",
+            "d_days": 0.003,
+            "emotional_state": "A wave of relief washing over me, muscles relaxing from tension.",
+            "emotional_intensity": 0.8
+        },
+        "temporal_distractor": {
+            "event": "Attended a rapid-fire lecture on advanced airway management techniques.",
+            "d_days": 0.004,
+            "emotional_state": "A focused engagement, absorbing new information intently.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Assisted in a tracheostomy on a patient with chronic airway obstruction in the ICU.",
+            "d_days": 135.0,
+            "emotional_state": "A steady, procedural calmness.",
+            "emotional_intensity": 0.5
+        }
+    },
+    {
+        "anchor": {
+            "event": "Performed an emergency appendectomy on a young patient, recognizing the signs of perforation during the initial assessment.",
+            "d_days": 0.0,
+            "emotional_state": "A sharp spike of professional anxiety mixed with intense focus.",
+            "emotional_intensity": 0.95
+        },
+        "positive": {
+            "event": "Patient recovered quickly post-op without complications, discharged home within two days.",
+            "d_days": 2.0,
+            "emotional_state": "A warm glow of satisfaction, seeing the positive outcome.",
+            "emotional_intensity": 0.85
+        },
+        "temporal_distractor": {
+            "event": "Reviewed imaging for a complex bowel obstruction case in the morning.",
+            "d_days": 2.1,
+            "emotional_state": "A methodical and analytical mental state.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Debated the merits of laparoscopic vs. open cholecystectomy during a morbidity and mortality conference.",
+            "d_days": 160.0,
+            "emotional_state": "An intellectual curiosity and critical assessment.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Diagnosed a rare abdominal pathology in an elderly patient during rounds, after multiple doctors had missed it.",
+            "d_days": 0.0,
+            "emotional_state": "A quiet sense of accomplishment mixed with a touch of surprise.",
+            "emotional_intensity": 0.75
+        },
+        "positive": {
+            "event": "The correct diagnosis led to timely and life-saving surgical intervention.",
+            "d_days": 0.5,
+            "emotional_state": "A profound satisfaction, knowing I made a critical difference.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Helped a junior resident with a challenging differential diagnosis for a fever of unknown origin.",
+            "d_days": 0.55,
+            "emotional_state": "A patient and instructive demeanor.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Attended a grand rounds presentation on a similar rare genetic disorder affecting the GI tract.",
+            "d_days": 180.0,
+            "emotional_state": "A deep intellectual absorption, connecting theoretical knowledge to practical experience.",
+            "emotional_intensity": 0.7
+        }
+    },
+    {
+        "anchor": {
+            "event": "Successfully managed a massive hemorrhage during a trauma laparotomy, controlling the bleed against immense odds.",
+            "d_days": 0.0,
+            "emotional_state": "An intense, almost primal focus, every nerve ending alert.",
+            "emotional_intensity": 0.98
+        },
+        "positive": {
+            "event": "Patient survived the critical first 24 hours and stabilized, moving towards recovery.",
+            "d_days": 1.0,
+            "emotional_state": "A deep, weary gratitude, physically drained but emotionally uplifted.",
+            "emotional_intensity": 0.9
+        },
+        "temporal_distractor": {
+            "event": "Debriefed with the trauma team on the critical decision points of the previous night's multi-car pile-up.",
+            "d_days": 1.1,
+            "emotional_state": "A reflective and analytical thought process.",
+            "emotional_intensity": 0.7
+        },
+        "semantic_distractor": {
+            "event": "Read an article about new techniques for vascular repair in penetrating abdominal trauma.",
+            "d_days": 125.0,
+            "emotional_state": "A studious and inquisitive mindset.",
+            "emotional_intensity": 0.6
+        }
+    },
+    {
+        "anchor": {
+            "event": "Performed a complex fasciotomy on a patient with compartment syndrome, feeling the pressure of time.",
+            "d_days": 0.0,
+            "emotional_state": "A focused tension, aware of the irreversible damage if delayed.",
+            "emotional_intensity": 0.9
+        },
+        "positive": {
+            "event": "Patient regained full motor function and avoided limb amputation.",
+            "d_days": 7.0,
+            "emotional_state": "An electric surge of triumphant energy, seeing the patient walk again.",
+            "emotional_intensity": 0.92
+        },
+        "temporal_distractor": {
+            "event": "Reviewed a new protocol for post-operative wound care in the orthopedic ward.",
+            "d_days": 7.05,
+            "emotional_state": "A diligent and conscientious evaluation.",
+            "emotional_intensity": 0.6
+        },
+        "semantic_distractor": {
+            "event": "Assisted in closing a large abdominal wound after a lengthy exploratory laparotomy.",
+            "d_days": 145.0,
+            "emotional_state": "A meticulous and precise manual execution.",
+            "emotional_intensity": 0.5
+        }
+    }
+]
