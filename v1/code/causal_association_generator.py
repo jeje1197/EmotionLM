@@ -45,9 +45,10 @@ def cosine_similarity(v1: List[float], v2: List[float]) -> float:
     return (float(sim) + 1.0) / 2.0
 
 def calculate_temporal_proximity(d_days_a: float, d_days_b: float) -> float:
-    """Calculate temporal proximity: 1 / (1 + delta_days)."""
+    """Calculate proximity using a log-compressed reciprocal to handle long time gaps."""
     delta_days = abs(d_days_a - d_days_b)
-    return 1.0 / (1.0 + delta_days)
+    # Using log1p(x) for ln(1+x) stability
+    return 1.0 / (1.0 + math.log1p(delta_days))
 
 class NarrativeEpisodicGenerator:
     def __init__(self, output_dir: str = "./v1/data"):

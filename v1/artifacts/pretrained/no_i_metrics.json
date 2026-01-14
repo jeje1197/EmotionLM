@@ -1,0 +1,26 @@
+{
+    "causal_no_i": {
+        "metrics": {
+            "accuracy": 0.7666666666666667,
+            "precision": 0.7777777777777778,
+            "recall": 0.5833333333333334,
+            "f1": 0.6666666666666666
+        }
+    },
+    "affective_no_i": {
+        "metrics": {
+            "accuracy": 0.6,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+        }
+    },
+    "combined_no_i": {
+        "metrics": {
+            "accuracy": 0.6,
+            "precision": 0.5172413793103449,
+            "recall": 0.30612244897959184,
+            "f1": 0.38461538461538464
+        }
+    }
+}

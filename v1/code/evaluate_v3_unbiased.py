@@ -22,7 +22,9 @@ class ALSEvaluator:
         
     def calculate_temporal_proximity(self, d_days_a, d_days_b):
         delta = abs(d_days_a - d_days_b)
-        return 1.0 / (1.0 + delta)
+        # Using log1p(x) for ln(1+x) stability
+        import math
+        return 1.0 / (1.0 + math.log1p(delta))
 
     def get_embeddings(self, text_list):
         if not self.client:

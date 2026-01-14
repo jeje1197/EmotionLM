@@ -1,18 +1,12 @@
 {
     "causal_easy": {
-        "anchor": {
-            "event": "A car engine starts making a high-pitched grinding metal noise.",
-            "d_days": 0.0,
-            "emotional_state": "Sharp anxiety, hyper-focus on sound.",
-            "emotional_intensity": 0.7
-        },
         "results": [
             {
                 "event": "The car engine seizes and smoke pours out of the hood.",
-                "score": 0.7441933751106262,
+                "score": 0.9992960691452026,
                 "features": {
-                    "S": 0.7723726913359444,
-                    "E": 0.7471517459175316,
+                    "S": 0.7372995087186847,
+                    "E": 0.7691192530901967,
                     "T": 0.993072708374196,
                     "I": 0.9
                 },
@@ -20,10 +14,10 @@
             },
             {
                 "event": "Noticed a nice sunset in the rearview mirror.",
-                "score": 0.30160683393478394,
+                "score": 0.0018584632780402899,
                 "features": {
-                    "S": 0.7538031695654327,
-                    "E": 0.7501260616959861,
+                    "S": 0.7560768838808861,
+                    "E": 0.7725993151395434,
                     "T": 0.9950372106070688,
                     "I": 0.3
                 },
@@ -31,10 +25,10 @@
             },
             {
                 "event": "Finished a podcast episode about the Roman Empire.",
-                "score": 0.23889285326004028,
+                "score": 0.00024482127628289163,
                 "features": {
-                    "S": 0.7537919599000117,
-                    "E": 0.7455273447624357,
+                    "S": 0.7766628431805367,
+                    "E": 0.7457865400290763,
                     "T": 0.9920948201648567,
                     "I": 0.2
                 },
@@ -43,19 +37,13 @@
         ]
     },
     "affective_easy": {
-        "anchor": {
-            "event": "Received a failing grade on a final medical board exam.",
-            "d_days": 0.0,
-            "emotional_state": "Crushing weight in chest, numbness, fear for the future.",
-            "emotional_intensity": 0.95
-        },
         "results": [
             {
                 "event": "Received a formal rejection letter from a residency program.",
-                "score": 0.7333166003227234,
+                "score": 0.9993853569030762,
                 "features": {
-                    "S": 0.7189867214382544,
-                    "E": 0.7500910831679857,
+                    "S": 0.7455093207670844,
+                    "E": 0.7446242696538048,
                     "T": 0.22553064631951622,
                     "I": 0.9
                 },
@@ -63,10 +51,10 @@
             },
             {
                 "event": "Ordered a latte at a quiet cafe.",
-                "score": 0.06652315706014633,
+                "score": 1.575958049215842e-05,
                 "features": {
-                    "S": 0.7321000370548555,
-                    "E": 0.7576155748036338,
+                    "S": 0.7495885505948334,
+                    "E": 0.7446457823161656,
                     "T": 0.22392725897047894,
                     "I": 0.1
                 },
@@ -75,19 +63,13 @@
         ]
     },
     "causal_hard": {
-        "anchor": {
-            "event": "Spending four hours preparing a five-course meal for a high-profile guest.",
-            "d_days": 0.0,
-            "emotional_state": "Focused exhaustion, quiet pride, performance anxiety.",
-            "emotional_intensity": 0.65
-        },
         "results": [
             {
                 "event": "A wine glass shatters on the kitchen tile, requiring immediate cleanup.",
-                "score": 0.6898711919784546,
+                "score": 0.9950136542320251,
                 "features": {
-                    "S": 0.7440771699295557,
-                    "E": 0.7354070791917876,
+                    "S": 0.731785516442029,
+                    "E": 0.7398636082834902,
                     "T": 0.9901477027639939,
                     "I": 0.8
                 },
@@ -95,10 +77,10 @@
             },
             {
                 "event": "Received a handwritten note praising the dinner's specific flavors.",
-                "score": 0.3702986538410187,
+                "score": 0.743116021156311,
                 "features": {
-                    "S": 0.71991050493291,
-                    "E": 0.7378402693995045,
+                    "S": 0.753336043010697,
+                    "E": 0.7289496105662548,
                     "T": 0.41905978419640516,
                     "I": 0.75
                 },
@@ -107,19 +89,13 @@
         ]
     },
     "affective_hard": {
-        "anchor": {
-            "event": "Being a 5-year-old child and losing sight of my parents in a crowded shopping mall.",
-            "d_days": 0.0,
-            "emotional_state": "Panic, absolute isolation, a feeling of being small and invisible.",
-            "emotional_intensity": 0.95
-        },
         "results": [
             {
                 "event": "Standing on a busy street corner in Tokyo, realizing I don't know the way back to the hotel.",
-                "score": 0.7030331492424011,
+                "score": 0.9933144450187683,
                 "features": {
-                    "S": 0.7348465773155933,
-                    "E": 0.7502622673002497,
+                    "S": 0.7399147279867551,
+                    "E": 0.7342412629520378,
                     "T": 0.10148360634734535,
                     "I": 0.85
                 },
@@ -127,10 +103,10 @@
             },
             {
                 "event": "Browsing for running shoes in a modern suburban shopping mall.",
-                "score": 0.10832307487726212,
+                "score": 3.431800359976478e-05,
                 "features": {
-                    "S": 0.748450158848834,
-                    "E": 0.7547773651497708,
+                    "S": 0.747149980479939,
+                    "E": 0.732875390323018,
                     "T": 0.10148345924216214,
                     "I": 0.2
                 },

@@ -38,16 +38,101 @@ class ALSConfig(BaseModel):
     semantic_weight: float = 0
     emotional_weight: float = 0
     temporal_weight: float = 0
+    intensity_weight: float = 0  # Added for V4 compatibility
     bias: float = 0
+    model_type: str = "linear"  # "linear" or "mlp"
+    mlp_path: str = ""          # Path to .pt weights if using mlp
+
+def calculate_als_score(
+    event_a: Dict[str, Any], 
+    event_b: Dict[str, Any], 
+    config: ALSConfig = None,
+    mlp_model: Any = None
+) -> float:
+    """Computes the link score using either linear or MLP logic."""
+    if config is None:
+        from .als import DEFAULT_ALS_CONFIG
+        config = DEFAULT_ALS_CONFIG
+
+    # Extract features for scoring
+    # 1. Semantic Similarity (Event A <-> Event B)
+    s = cosine_similarity(
+        event_a.get("embedding", np.zeros(768)),
+        event_b.get("embedding", np.zeros(768))
+    )
+    
+    # 2. Emotional Alignment (State A <-> State B)
+    # Note: If memory doesn't have emotions, default to mid-range
+    e = cosine_similarity(
+        event_a.get("emotional_embedding", np.zeros(768)),
+        event_b.get("emotional_embedding", np.zeros(768))
+    )
+    
+    # 3. Temporal Proximity
+    t = temporal_proximity(
+        event_a.get("timestamp", ""),
+        event_b.get("timestamp", "")
+    )
+    
+    # 4. Target Intensity (from Event B)
+    i = event_b.get("emotional_intensity", 0.0)
+
+    if config.model_type == "mlp" and mlp_model is not None:
+        import torch
+        # [S, E, T, I]
+        feat_tensor = torch.tensor([[s, e, t, i]], dtype=torch.float32)
+        with torch.no_grad():
+            return float(mlp_model(feat_tensor).item())
+    
+    # Linear ALS
+    score = (s * config.semantic_weight + 
+             e * config.emotional_weight + 
+             t * config.temporal_weight + 
+             i * config.intensity_weight + 
+             config.bias)
+    
+    return 1.0 / (1.0 + np.exp(-score))
 
 
-"""Trained default ALS weights from v1 experimentation."""
-DEFAULT_ALS_CONFIG = ALSConfig(
-    semantic_weight=0.0791,
-    emotional_weight=-0.5179,
-    temporal_weight=3.1470,
-    bias=0.0,
-)
+class HybridMemoryScorer:
+    """The 'Dual-Pathway' Scorer.
+    
+    Uses Linear ALS for routine/procedural continuity and MLP for 
+    high-intensity episodic resonance.
+    """
+    def __init__(self, linear_config: ALSConfig, mlp_model: Any = None, threshold: float = 0.4):
+        self.linear_config = linear_config
+        self.mlp_model = mlp_model
+        self.threshold = threshold
+
+    def score(self, event_a: Dict[str, Any], event_b: Dict[str, Any]) -> float:
+        intensity = event_b.get("emotional_intensity", 0.0)
+        
+        # EPISODIC PATHWAY (MLP) for high-intensity significance
+        if intensity >= self.threshold and self.mlp_model is not None:
+            return calculate_als_score(
+                event_a, event_b, 
+                config=ALSConfig(model_type="mlp"), 
+                mlp_model=self.mlp_model
+            )
+        
+        # PROCEDURAL PATHWAY (Linear) for routine logitstics
+        return calculate_als_score(event_a, event_b, config=self.linear_config)
+
+    def __call__(self, event_a: Dict[str, Any], event_b: Dict[str, Any]) -> float:
+        return self.score(event_a, event_b)
+        intensity = features.get("i", 0)
+        
+        # EPISODIC PATHWAY (MLP) for high-intensity
+        if intensity >= self.threshold and self.mlp_model is not None:
+            import torch
+            s, e, t = features.get("s",0), features.get("e",0), features.get("t",0)
+            feat_tensor = torch.tensor([[s, e, t, intensity]], dtype=torch.float32)
+            with torch.no_grad():
+                return float(self.mlp_model(feat_tensor).item())
+        
+        # PROCEDURAL PATHWAY (Linear) for everything else
+        return calculate_als_score(features, self.linear_config)
 
 
 def calculate_als_score(a: Dict[str, Any], b: Dict[str, Any], als_config: ALSConfig = DEFAULT_ALS_CONFIG) -> float:
