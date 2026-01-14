@@ -1,0 +1,141 @@
+{
+    "causal_easy": {
+        "anchor": {
+            "event": "A car engine starts making a high-pitched grinding metal noise.",
+            "d_days": 0.0,
+            "emotional_state": "Sharp anxiety, hyper-focus on sound.",
+            "emotional_intensity": 0.7
+        },
+        "results": [
+            {
+                "event": "The car engine seizes and smoke pours out of the hood.",
+                "score": 0.7707200646400452,
+                "features": {
+                    "S": 0.7580356655588937,
+                    "E": 0.7553029224651486,
+                    "T": 0.99304865938431,
+                    "I": 0.9
+                },
+                "label": "TRUE_LINK"
+            },
+            {
+                "event": "Noticed a nice sunset in the rearview mirror.",
+                "score": 0.30480432510375977,
+                "features": {
+                    "S": 0.7759168287614584,
+                    "E": 0.7702652561905515,
+                    "T": 0.9950248756218907,
+                    "I": 0.3
+                },
+                "label": "RANDOM"
+            },
+            {
+                "event": "Finished a podcast episode about the Roman Empire.",
+                "score": 0.2518428564071655,
+                "features": {
+                    "S": 0.7467641814494349,
+                    "E": 0.7429955839065645,
+                    "T": 0.9920634920634921,
+                    "I": 0.2
+                },
+                "label": "RANDOM"
+            }
+        ]
+    },
+    "affective_easy": {
+        "anchor": {
+            "event": "Received a failing grade on a final medical board exam.",
+            "d_days": 0.0,
+            "emotional_state": "Crushing weight in chest, numbness, fear for the future.",
+            "emotional_intensity": 0.95
+        },
+        "results": [
+            {
+                "event": "Received a formal rejection letter from a residency program.",
+                "score": 0.7241694331169128,
+                "features": {
+                    "S": 0.7703520807494346,
+                    "E": 0.7468582174996917,
+                    "T": 0.03225806451612903,
+                    "I": 0.9
+                },
+                "label": "TRUE_LINK"
+            },
+            {
+                "event": "Ordered a latte at a quiet cafe.",
+                "score": 0.06197778508067131,
+                "features": {
+                    "S": 0.7450300410871666,
+                    "E": 0.7439709485691102,
+                    "T": 0.03125,
+                    "I": 0.1
+                },
+                "label": "RANDOM"
+            }
+        ]
+    },
+    "causal_hard": {
+        "anchor": {
+            "event": "Spending four hours preparing a five-course meal for a high-profile guest.",
+            "d_days": 0.0,
+            "emotional_state": "Focused exhaustion, quiet pride, performance anxiety.",
+            "emotional_intensity": 0.65
+        },
+        "results": [
+            {
+                "event": "A wine glass shatters on the kitchen tile, requiring immediate cleanup.",
+                "score": 0.6999580264091492,
+                "features": {
+                    "S": 0.7631548464994975,
+                    "E": 0.7678774494565282,
+                    "T": 0.9900990099009901,
+                    "I": 0.8
+                },
+                "label": "DISTRACTOR_IMMEDIATE"
+            },
+            {
+                "event": "Received a handwritten note praising the dinner's specific flavors.",
+                "score": 0.3030875623226166,
+                "features": {
+                    "S": 0.7363129635279404,
+                    "E": 0.7570913587076601,
+                    "T": 0.25,
+                    "I": 0.75
+                },
+                "label": "TRUE_LINK_DELAYED"
+            }
+        ]
+    },
+    "affective_hard": {
+        "anchor": {
+            "event": "Being a 5-year-old child and losing sight of my parents in a crowded shopping mall.",
+            "d_days": 0.0,
+            "emotional_state": "Panic, absolute isolation, a feeling of being small and invisible.",
+            "emotional_intensity": 0.95
+        },
+        "results": [
+            {
+                "event": "Standing on a busy street corner in Tokyo, realizing I don't know the way back to the hotel.",
+                "score": 0.6648210287094116,
+                "features": {
+                    "S": 0.7709464751044763,
+                    "E": 0.737000910147593,
+                    "T": 0.00014283673760891302,
+                    "I": 0.85
+                },
+                "label": "TRUE_AFFECTIVE_LINK"
+            },
+            {
+                "event": "Browsing for running shoes in a modern suburban shopping mall.",
+                "score": 0.08634179085493088,
+                "features": {
+                    "S": 0.7681035558240753,
+                    "E": 0.7683661348744779,
+                    "T": 0.00014283469740469353,
+                    "I": 0.2
+                },
+                "label": "SEMANTIC_TRAP"
+            }
+        ]
+    }
+}
