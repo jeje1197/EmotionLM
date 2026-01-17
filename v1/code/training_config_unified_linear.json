@@ -1,0 +1,19 @@
+{
+  "data_csv": "v1/data/unified_training_dataset.csv",
+  "val_split": 0.2,
+  "num_epochs": 150,
+  "learning_rate": 0.005,
+  "early_stopping_patience": 15,
+  "mode": "single_stage",  
+  "use_pos_weight": true,
+  "output_model_path": "v1/artifacts/pretrained/als_unified_linear.pt",
+  "batch_size": 16,
+  "feature_fields": [
+    "Semantic_Similarity",
+    "Emotional_Alignment",
+    "Time_Closeness",
+    "Target_Intensity"
+  ],
+  "label_field": "Linked",
+  "random_seed": 42
+}

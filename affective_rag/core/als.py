@@ -121,18 +121,16 @@ class HybridMemoryScorer:
 
     def __call__(self, event_a: Dict[str, Any], event_b: Dict[str, Any]) -> float:
         return self.score(event_a, event_b)
-        intensity = features.get("i", 0)
-        
-        # EPISODIC PATHWAY (MLP) for high-intensity
-        if intensity >= self.threshold and self.mlp_model is not None:
-            import torch
-            s, e, t = features.get("s",0), features.get("e",0), features.get("t",0)
-            feat_tensor = torch.tensor([[s, e, t, intensity]], dtype=torch.float32)
-            with torch.no_grad():
-                return float(self.mlp_model(feat_tensor).item())
-        
-        # PROCEDURAL PATHWAY (Linear) for everything else
-        return calculate_als_score(features, self.linear_config)
+
+
+"""Trained default ALS weights (V4 Linear - Combined)."""
+DEFAULT_ALS_CONFIG = ALSConfig(
+    semantic_weight=0.0180,
+    emotional_weight=-0.0699,
+    temporal_weight=0.7198,
+    intensity_weight=1.1977,
+    bias=-0.9237,
+)
 
 
 def calculate_als_score(a: Dict[str, Any], b: Dict[str, Any], als_config: ALSConfig = DEFAULT_ALS_CONFIG) -> float:

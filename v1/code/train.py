@@ -432,7 +432,8 @@ def main() -> None:
     print(f"Loading data from {cfg['data_csv']}")
     train_ds, val_ds = make_datasets(cfg)
 
-    model = ALSModel(ignore_feature=None)
+    input_dim = len(cfg.get("feature_fields", []))
+    model = ALSModel(input_dim=input_dim, ignore_feature=None)
     baseline_val_loss = evaluate_dataset(val_ds, model)
     print(f"Baseline validation BCE loss (untrained model): {baseline_val_loss:.4f}")
 
@@ -451,18 +452,13 @@ def main() -> None:
     bias = model.slp.bias.detach().numpy()[0]
 
     # Save weight values to metrics
-    metrics["final_weights"] = {
-        "Semantic_Weight": float(weights[0]),
-        "Emotional_Weight": float(weights[1]),
-        "Temporal_Weight": float(weights[2]),
-        "Bias": float(bias)
-    }
+    feature_names = cfg.get("feature_fields", [])
+    metrics["final_weights"] = {name: float(w) for name, w in zip(feature_names, weights)}
+    metrics["final_weights"]["Bias"] = float(bias)
 
     print("\n--- Observed Weights ---")
-    print(f"Semantic Weight:  {weights[0]:.4f}")
-    print(f"Emotional Weight: {weights[1]:.4f}")
-    print(f"Temporal Weight:  {weights[2]:.4f}")
-    print(f"Bias:             {bias:.4f}")
+    for name, val in metrics["final_weights"].items():
+        print(f"{name:20}: {val:.4f}")
     print("------------------------\n")
 
     # Save results (metrics, weights, and config)

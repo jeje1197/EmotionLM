@@ -13,11 +13,11 @@ import torch.nn as nn
 
 
 class ALSModel(nn.Module):
-    def __init__(self, ignore_feature: int | None = None) -> None:
+    def __init__(self, input_dim: int = 3, ignore_feature: int | None = None) -> None:
         super().__init__()
-        # Order of inputs: [Semantic_Similarity, Emotional_Alignment, Time_Closeness]
-        self.slp = nn.Linear(3, 1, bias=True)
-        # If set to an index (0, 1, or 2), that feature is zeroed in forward.
+        # Order of inputs varies by config; default is 3 for legacy
+        self.slp = nn.Linear(input_dim, 1, bias=True)
+        # If set to an index, that feature is zeroed in forward.
         self.ignore_feature = ignore_feature
         self._init_weights()
 
